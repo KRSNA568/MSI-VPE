@@ -1,0 +1,421 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Lighting Techniques Database",
+  "description": "Professional lighting setups and techniques for cinematic emotion conveyance",
+  "version": "1.0.0",
+  "techniques": [
+    {
+      "technique_id": "LT-001",
+      "name": "Rembrandt Lighting",
+      "description": "Key light at 45° angle and height creates characteristic triangle of light on shadow-side cheek",
+      "setup": {
+        "key_light": {
+          "position": "45° to side of subject, above eye level",
+          "quality": "Hard or slightly softened",
+          "intensity": "High (key light)",
+          "distance": "3-6 feet from subject"
+        },
+        "fill_light": {
+          "position": "Opposite side, near camera axis",
+          "quality": "Soft",
+          "intensity": "30-50% of key light",
+          "distance": "Adjustable for ratio"
+        },
+        "back_light": {
+          "position": "Behind subject, above",
+          "quality": "Hard",
+          "intensity": "Equal to or slightly brighter than key",
+          "distance": "Variable"
+        }
+      },
+      "ratios": {
+        "lighting_ratio": "4:1 to 8:1 (dramatic)",
+        "contrast": "medium-high"
+      },
+      "emotional_effect": "Drama, mystery, depth, classic portraiture, seriousness",
+      "typical_usage": "Character portraits, serious moments, dramatic reveals, classic cinema",
+      "avoiding": "Comedy, high-key scenes, cheerful moments",
+      "technical_notes": "Triangle of light on cheek should be no larger than eye length. Named after Dutch painter Rembrandt van Rijn. Very flattering to most faces.",
+      "film_examples": ["The Godfather", "Citizen Kane", "Schindler's List"]
+    },
+    {
+      "technique_id": "LT-002",
+      "name": "Butterfly Lighting",
+      "description": "Key light directly in front and above subject creates butterfly-shaped shadow under nose",
+      "setup": {
+        "key_light": {
+          "position": "Directly above and in front, on camera axis",
+          "quality": "Soft to medium",
+          "intensity": "High",
+          "distance": "3-5 feet from subject"
+        },
+        "fill_light": {
+          "position": "Below subject, reflector or soft light",
+          "quality": "Very soft",
+          "intensity": "Low, just fills shadows",
+          "distance": "Close"
+        },
+        "back_light": {
+          "position": "Behind subject, optional",
+          "quality": "Hard",
+          "intensity": "Medium",
+          "distance": "Variable"
+        }
+      },
+      "ratios": {
+        "lighting_ratio": "2:1 to 3:1 (flattering)",
+        "contrast": "low-medium"
+      },
+      "emotional_effect": "Glamour, beauty, classic Hollywood, elegance, flattering",
+      "typical_usage": "Beauty shots, glamour photography, Old Hollywood portraits, fashion",
+      "avoiding": "Gritty realism, character flaws, harsh truth",
+      "technical_notes": "Creates butterfly-shaped nose shadow. Hides wrinkles and blemishes. Emphasizes cheekbones. Can look flat if not careful with fill.",
+      "film_examples": ["Classic Hollywood portraits", "Marlene Dietrich films", "Casablanca (Ingrid Bergman shots)"]
+    },
+    {
+      "technique_id": "LT-003",
+      "name": "Split Lighting",
+      "description": "Key light at exactly 90° to subject, lighting half face while other half in shadow",
+      "setup": {
+        "key_light": {
+          "position": "90° to side of subject (perpendicular)",
+          "quality": "Hard",
+          "intensity": "High",
+          "distance": "3-6 feet"
+        },
+        "fill_light": {
+          "position": "Minimal or none",
+          "quality": "Soft if used",
+          "intensity": "Very low, 10-20% of key",
+          "distance": "Far"
+        },
+        "back_light": {
+          "position": "Behind subject, optional",
+          "quality": "Hard",
+          "intensity": "Medium",
+          "distance": "Variable"
+        }
+      },
+      "ratios": {
+        "lighting_ratio": "8:1 to infinite (one side unlit)",
+        "contrast": "very high"
+      },
+      "emotional_effect": "Duality, internal conflict, split personality, good vs evil, dramatic tension",
+      "typical_usage": "Characters with dual nature, noir films, moments of moral conflict, dramatic emphasis",
+      "avoiding": "Soft romance, comedy, cheerful scenes, flattering beauty shots",
+      "technical_notes": "Exactly half face lit, half dark. Very dramatic and bold. Works best in profile or near-profile. Don't overuse or loses impact.",
+      "film_examples": ["The Godfather", "Fight Club", "Batman films (Two-Face)"]
+    },
+    {
+      "technique_id": "LT-004",
+      "name": "Loop Lighting",
+      "description": "Key light slightly off-center creates small shadow loop from nose toward cheek",
+      "setup": {
+        "key_light": {
+          "position": "15-30° to side, slightly above eye level",
+          "quality": "Soft to medium",
+          "intensity": "High",
+          "distance": "3-5 feet"
+        },
+        "fill_light": {
+          "position": "Opposite side, near camera",
+          "quality": "Soft",
+          "intensity": "40-60% of key",
+          "distance": "Adjustable"
+        },
+        "back_light": {
+          "position": "Behind and above subject",
+          "quality": "Hard",
+          "intensity": "Equal to key",
+          "distance": "Variable"
+        }
+      },
+      "ratios": {
+        "lighting_ratio": "3:1 to 4:1 (natural)",
+        "contrast": "medium"
+      },
+      "emotional_effect": "Natural, approachable, standard, versatile, professional",
+      "typical_usage": "Most dialogue scenes, standard portraits, general purpose lighting, interviews",
+      "avoiding": "Extreme stylization, when dramatic effect needed",
+      "technical_notes": "Most common portrait lighting. Between Rembrandt and Butterfly. Nose shadow should loop down but not touch cheek. Very versatile and flattering.",
+      "film_examples": ["Most modern films use this as default", "Standard TV/film lighting"]
+    },
+    {
+      "technique_id": "LT-005",
+      "name": "Broad Lighting",
+      "description": "Subject's face turned away from camera, key light illuminates side facing camera (wider side)",
+      "setup": {
+        "key_light": {
+          "position": "On same side as face is turned",
+          "quality": "Medium",
+          "intensity": "High",
+          "distance": "3-5 feet"
+        },
+        "fill_light": {
+          "position": "Shadow side",
+          "quality": "Soft",
+          "intensity": "30-40% of key",
+          "distance": "Adjustable"
+        }
+      },
+      "ratios": {
+        "lighting_ratio": "3:1 to 4:1",
+        "contrast": "medium"
+      },
+      "emotional_effect": "Makes face appear wider, more open, less dramatic",
+      "typical_usage": "Subjects with narrow faces, when wider look desired, less dramatic scenes",
+      "avoiding": "Subjects with wide faces, dramatic emphasis, slimming effect needed",
+      "technical_notes": "Illuminates more of face than short lighting. More common in commercial work. Less dramatic than short lighting.",
+      "film_examples": ["Commercial advertising", "Some comedy films"]
+    },
+    {
+      "technique_id": "LT-006",
+      "name": "Short Lighting",
+      "description": "Subject's face turned away from camera, key light illuminates side turned away (narrower side visible)",
+      "setup": {
+        "key_light": {
+          "position": "On opposite side from camera",
+          "quality": "Medium to hard",
+          "intensity": "High",
+          "distance": "3-6 feet"
+        },
+        "fill_light": {
+          "position": "Camera side",
+          "quality": "Soft",
+          "intensity": "30-40% of key",
+          "distance": "Adjustable"
+        }
+      },
+      "ratios": {
+        "lighting_ratio": "4:1 to 6:1",
+        "contrast": "medium-high"
+      },
+      "emotional_effect": "More dramatic, slimming, mysterious, sculptural",
+      "typical_usage": "Dramatic scenes, slimming effect, adding mystery, more cinematic look",
+      "avoiding": "Cheerful scenes, when want open feeling, faces needing widening",
+      "technical_notes": "Illuminates less of face than broad lighting. More dramatic and sculptural. Slims face. More common in dramatic cinema.",
+      "film_examples": ["Most dramatic cinema", "Film noir"]
+    },
+    {
+      "technique_id": "LT-007",
+      "name": "Chiaroscuro",
+      "description": "Extreme contrast between light and dark with bold shadows and minimal fill",
+      "setup": {
+        "key_light": {
+          "position": "Single strong source, often 45-90° to side",
+          "quality": "Hard",
+          "intensity": "Very high",
+          "distance": "3-6 feet"
+        },
+        "fill_light": {
+          "position": "None or minimal",
+          "quality": "N/A",
+          "intensity": "Zero or <10% of key",
+          "distance": "N/A"
+        },
+        "back_light": {
+          "position": "Optional, if used, very strong",
+          "quality": "Hard",
+          "intensity": "High",
+          "distance": "Variable"
+        }
+      },
+      "ratios": {
+        "lighting_ratio": "16:1 to infinite",
+        "contrast": "extreme"
+      },
+      "emotional_effect": "Dramatic intensity, good vs evil, theatrical, religious, moral weight",
+      "typical_usage": "Religious scenes, moral dramas, expressionist films, superhero moments, operatic scenes",
+      "avoiding": "Realism, subtle drama, modern naturalism, comedy",
+      "technical_notes": "Italian for 'light-dark'. Inspired by Caravaggio paintings. No fill light. Bold, theatrical shadows. Very striking but can be heavy-handed.",
+      "film_examples": ["The Passion of Joan of Arc", "Nosferatu", "Batman (1989)", "Blade Runner"]
+    },
+    {
+      "technique_id": "LT-008",
+      "name": "Silhouette Lighting",
+      "description": "Subject backlit with no front lighting, appearing as dark shape against bright background",
+      "setup": {
+        "key_light": {
+          "position": "None (subject side)",
+          "quality": "N/A",
+          "intensity": "Zero",
+          "distance": "N/A"
+        },
+        "back_light": {
+          "position": "Behind subject, strong",
+          "quality": "Hard or soft",
+          "intensity": "Very high",
+          "distance": "Variable, often natural (window, doorway)"
+        }
+      },
+      "ratios": {
+        "lighting_ratio": "Infinite (zero light on subject face)",
+        "contrast": "extreme"
+      },
+      "emotional_effect": "Mystery, anonymity, dramatic reveal setup, universality, isolation",
+      "typical_usage": "Mystery characters before reveal, sunset/sunrise shots, dramatic entrances, transitions",
+      "avoiding": "When character emotion must be visible, intimate moments, dialogue scenes",
+      "technical_notes": "Expose for bright background. Subject becomes pure shape. Very dramatic. Often used in transitions or introductions.",
+      "film_examples": ["Close Encounters of the Third Kind", "E.T. bike scene", "noir detective entrances"]
+    },
+    {
+      "technique_id": "LT-009",
+      "name": "Top Lighting (Horror)",
+      "description": "Key light directly above subject creates deep shadows in eye sockets and under nose/chin",
+      "setup": {
+        "key_light": {
+          "position": "Directly above subject, 90° overhead",
+          "quality": "Hard",
+          "intensity": "High",
+          "distance": "Close enough to create shadows"
+        },
+        "fill_light": {
+          "position": "Minimal or none",
+          "quality": "Soft if used",
+          "intensity": "Very low",
+          "distance": "Far"
+        }
+      },
+      "ratios": {
+        "lighting_ratio": "8:1 to infinite",
+        "contrast": "high to extreme"
+      },
+      "emotional_effect": "Sinister, evil, unnatural, horror, skull-like, demonic",
+      "typical_usage": "Horror films, villain reveals, demonic possession, unnatural states",
+      "avoiding": "Flattering shots, romance, heroic moments, standard drama",
+      "technical_notes": "Mimics overhead streetlight or interrogation room. Creates skull-like shadows. Very unflattering. Use sparingly for shock value.",
+      "film_examples": ["The Exorcist", "Horror classics", "Villain reveals"]
+    },
+    {
+      "technique_id": "LT-010",
+      "name": "Under Lighting",
+      "description": "Light source below subject's face, pointing upward",
+      "setup": {
+        "key_light": {
+          "position": "Below subject, pointing up",
+          "quality": "Hard or medium",
+          "intensity": "High",
+          "distance": "1-3 feet"
+        },
+        "fill_light": {
+          "position": "Minimal",
+          "quality": "Soft",
+          "intensity": "Low",
+          "distance": "Variable"
+        }
+      },
+      "ratios": {
+        "lighting_ratio": "6:1 to 12:1",
+        "contrast": "high"
+      },
+      "emotional_effect": "Unnatural, ghostly, campfire stories, sinister, scary",
+      "typical_usage": "Campfire scenes, flashlight under chin, ghost stories, horror moments",
+      "avoiding": "Natural, flattering, or realistic lighting",
+      "technical_notes": "Reverses natural lighting (sun from above). Creates unnatural, scary effect. Classic campfire/flashlight horror technique.",
+      "film_examples": ["Campfire scenes", "The Blair Witch Project", "Horror anthology framing"]
+    },
+    {
+      "technique_id": "LT-011",
+      "name": "Natural Window Light",
+      "principle": "Large soft light source from window provides beautiful, natural illumination",
+      "setup": {
+        "key_light": {
+          "position": "Window (natural light), subject perpendicular or angled to window",
+          "quality": "Soft (large source)",
+          "intensity": "Variable (time of day)",
+          "distance": "Subject close to window for soft light"
+        },
+        "fill_light": {
+          "position": "Reflector or ambient bounce opposite window",
+          "quality": "Very soft",
+          "intensity": "Low to medium",
+          "distance": "Variable"
+        }
+      },
+      "ratios": {
+        "lighting_ratio": "2:1 to 6:1 depending on fill",
+        "contrast": "low to medium"
+      },
+      "emotional_effect": "Natural, realistic, intimate, contemplative, beautiful",
+      "typical_usage": "Intimate dramas, realistic scenes, morning scenes, contemplative moments",
+      "avoiding": "Night scenes, when consistent lighting needed, bright day exteriors (too harsh)",
+      "technical_notes": "Diffused window light is one of most beautiful light sources. North-facing window = consistent. Overcast day = huge softbox. Close to window = softer.",
+      "film_examples": ["Ida", "The Assassination of Jesse James", "Tree of Life"]
+    },
+    {
+      "technique_id": "LT-012",
+      "name": "Practical Light Motivation",
+      "description": "Visible light sources in frame (lamps, candles, screens) motivate and enhance lighting design",
+      "setup": {
+        "practical_lights": {
+          "position": "In frame, visible (table lamps, candles, TVs, etc.)",
+          "quality": "Variable",
+          "intensity": "Often dimmed for camera",
+          "distance": "Part of set design"
+        },
+        "augmentation": {
+          "position": "Hidden film lights matching practical source direction/quality",
+          "quality": "Matched to practical",
+          "intensity": "Higher than practical to actually light scene",
+          "distance": "Hidden from camera"
+        }
+      },
+      "ratios": {
+        "lighting_ratio": "Variable, motivated by practical",
+        "contrast": "Variable"
+      },
+      "emotional_effect": "Realism, naturalism, believability, immersion, intimacy",
+      "typical_usage": "Modern cinematography, intimate interiors, night scenes, realistic drama",
+      "avoiding": "When practicals would be distracting or inappropriate to story",
+      "technical_notes": "Practical light alone rarely enough. Supplement with hidden film lights matching practical's quality/direction. Adds huge realism when done well.",
+      "film_examples": ["Blade Runner 2049", "The Revenant", "Most modern prestige dramas"]
+    }
+  ],
+  "lighting_quality_guide": {
+    "hard_light": {
+      "characteristics": "Sharp shadow edges, high contrast, defined transitions",
+      "sources": "Small lights, direct sun, spotlights, unmodified fixtures",
+      "emotional_uses": "Drama, harshness, clarity, realism, intensity",
+      "softening_methods": "Diffusion, bounce, larger source, distance"
+    },
+    "soft_light": {
+      "characteristics": "Gradual shadow transitions, lower contrast, wrapping quality",
+      "sources": "Large sources, diffused lights, softboxes, overcast sky, bounced light",
+      "emotional_uses": "Beauty, gentleness, flattering, dreamy, romance",
+      "hardening_methods": "Smaller source, remove diffusion, increase distance, grid"
+    }
+  },
+  "color_temperature_guide": {
+    "warm_light": {
+      "kelvin_range": "2700K-3200K",
+      "sources": "Tungsten bulbs, candles, firelight, sunset",
+      "emotional_effect": "Comfort, intimacy, nostalgia, warmth, romance",
+      "usage": "Interiors, memories, cozy scenes, golden hour"
+    },
+    "neutral_light": {
+      "kelvin_range": "5000K-5600K",
+      "sources": "Daylight, HMI lights, midday sun, flash",
+      "emotional_effect": "Natural, neutral, realistic, balanced",
+      "usage": "Exteriors, neutral scenes, accurate color reproduction"
+    },
+    "cool_light": {
+      "kelvin_range": "6500K-9000K",
+      "sources": "Overcast sky, blue hour, moonlight (perceived), screens",
+      "emotional_effect": "Clinical, modern, detached, cold, alienation",
+      "usage": "Sci-fi, hospitals, night scenes, emotional distance"
+    }
+  },
+  "metadata": {
+    "total_techniques": 12,
+    "created_by": "MSI-VPE Project Team",
+    "last_updated": "2024-01-15",
+    "sources": [
+      "Film Lighting by Kris Malkiewicz",
+      "Cinematography: Theory and Practice by Blain Brown",
+      "Light Science & Magic by Fil Hunter",
+      "Set Lighting Technician's Handbook by Harry Box",
+      "Painting with Light by John Alton"
+    ],
+    "usage_notes": "Lighting ratios indicate key:fill relationship (e.g., 4:1 = key is 4x brighter than fill). Contrast levels: low (<3:1), medium (3:1-6:1), high (6:1-12:1), extreme (12:1+). Quality (hard/soft) and color temperature are as important as setup geometry."
+  }
+}

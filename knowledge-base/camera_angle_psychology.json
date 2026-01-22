@@ -1,0 +1,233 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Camera Angle Psychology Database",
+  "description": "Psychological effects and emotional impacts of different camera angles",
+  "version": "1.0.0",
+  "vertical_angles": [
+    {
+      "angle": "Extreme Low Angle",
+      "degrees": "45-90° below eye level",
+      "psychological_effect": "Overwhelming power, intimidation, monumentality, divine/demonic presence",
+      "character_perception": "Godlike, terrifying, dominant, imposing, larger-than-life",
+      "audience_feeling": "Intimidated, awed, small, vulnerable, overpowered",
+      "power_dynamic": "Subject has extreme power over viewer",
+      "typical_usage": ["Villain introductions", "Building/monument establishing shots", "Superhero moments", "Moments of triumph", "Religious/mythical beings"],
+      "avoid_when": ["Character vulnerability", "Intimate moments", "Sympathy required"],
+      "technical_notes": "Camera often on ground. Creates distortion with wide lenses. Use sparingly for maximum impact.",
+      "film_examples": ["Darth Vader introductions", "Lord of the Rings (Sauron)", "Avengers hero shots"]
+    },
+    {
+      "angle": "Low Angle",
+      "degrees": "15-45° below eye level",
+      "psychological_effect": "Power, authority, confidence, heroism, dominance",
+      "character_perception": "Strong, confident, important, authoritative, heroic",
+      "audience_feeling": "Looking up to character, respect, admiration (or fear)",
+      "power_dynamic": "Subject has power, viewer is subordinate",
+      "typical_usage": ["Hero shots", "Authority figures", "Confident characters", "Power plays", "Courtroom lawyers", "Leaders"],
+      "avoid_when": ["Showing weakness", "Vulnerability", "Defeat moments"],
+      "technical_notes": "Most common power angle. Can be subtle (15°) or dramatic (45°). Works for both heroes and villains.",
+      "film_examples": ["Superhero landings", "The Godfather (Marlon Brando)", "Most authority figure shots"]
+    },
+    {
+      "angle": "Eye Level",
+      "degrees": "0° (camera at subject's eye level)",
+      "psychological_effect": "Equality, neutrality, realism, direct connection",
+      "character_perception": "Equal to viewer, relatable, human, accessible",
+      "audience_feeling": "Connected, neutral, observational, engaged",
+      "power_dynamic": "Equal footing between subject and viewer",
+      "typical_usage": ["Most dialogue", "Establishing normalcy", "Documentary style", "Interviews", "Conversational scenes"],
+      "avoid_when": ["Need to show power dynamics", "Require psychological unease"],
+      "technical_notes": "Most common angle. Creates audience-character equality. Baseline for comparison with other angles.",
+      "film_examples": ["Most dialogue scenes in most films", "Documentary interviews"]
+    },
+    {
+      "angle": "High Angle",
+      "degrees": "15-45° above eye level",
+      "psychological_effect": "Vulnerability, weakness, submission, defeat, insignificance",
+      "character_perception": "Small, weak, defeated, vulnerable, childlike",
+      "audience_feeling": "Looking down on character, sympathy, pity, or superiority",
+      "power_dynamic": "Viewer has power over subject",
+      "typical_usage": ["Defeated characters", "Vulnerability moments", "Children", "Victims", "Emotional breakdowns", "Isolation"],
+      "avoid_when": ["Empowerment scenes", "Hero moments", "Authority establishment"],
+      "technical_notes": "Creates sympathy or emphasizes weakness. Subtle angles for gentle effect, steep for dramatic emphasis.",
+      "film_examples": ["Lord of the Rings (Frodo feeling small)", "Most crying scenes", "Victim shots in thrillers"]
+    },
+    {
+      "angle": "Extreme High Angle (Bird's Eye)",
+      "degrees": "45-90° above eye level (top-down)",
+      "psychological_effect": "God's perspective, fate, insignificance, surveillance, detachment",
+      "character_perception": "Tiny, insignificant, part of larger pattern, fated, watched",
+      "audience_feeling": "Omniscient observer, detached, clinical, divine perspective",
+      "power_dynamic": "Viewer as god/observer, subject powerless",
+      "typical_usage": ["Death scenes", "Fate/destiny moments", "Surveillance themes", "Character as small in world", "Dance/movement choreography", "Endings"],
+      "avoid_when": ["Intimate character connection", "Ground-level realism"],
+      "technical_notes": "Requires crane, drone, or high vantage point. Flattens space. Very distinctive, use sparingly.",
+      "film_examples": ["The Shining (maze overhead)", "Goodfellas (helicopter shot)", "Most death scene overheads"]
+    },
+    {
+      "angle": "Overhead (Direct Top-Down)",
+      "degrees": "90° (directly above, perpendicular)",
+      "psychological_effect": "Surveillance, pattern, geometry, voyeurism, clinical observation",
+      "character_perception": "Object to be observed, part of pattern, specimen",
+      "audience_feeling": "Detached observer, analytical, distant",
+      "power_dynamic": "Complete viewer dominance, subject as object",
+      "typical_usage": ["Wes Anderson compositions", "Dance sequences", "Death/sleeping scenes", "Symmetry emphasis", "Medical/scientific observation"],
+      "avoid_when": ["Emotional intimacy", "Dynamic action", "Traditional drama"],
+      "technical_notes": "Perfectly 90° top-down. Removes depth dimension. Very stylized. Signature of certain directors.",
+      "film_examples": ["Wes Anderson films", "Oldboy hallway fight overhead shots"]
+    },
+    {
+      "angle": "Worm's Eye View (Ground Level)",
+      "degrees": "Extreme low, camera on/near ground",
+      "psychological_effect": "Extreme power, overwhelm, monumentality, ant's perspective",
+      "character_perception": "Towering, god-like, crushing, enormous",
+      "audience_feeling": "Crushed, overwhelmed, tiny, vulnerable",
+      "power_dynamic": "Extreme subject dominance",
+      "typical_usage": ["Giant creatures/kaiju", "Overwhelming villains", "Monument shots", "Skyscraper establishing", "Crushing moments"],
+      "avoid_when": ["Humanizing characters", "Intimacy", "Sympathy"],
+      "technical_notes": "Camera literally on ground or very close. More extreme than low angle. Creates maximum distortion.",
+      "film_examples": ["Godzilla films", "Breaking Bad (crawl space scene)"]
+    },
+    {
+      "angle": "Dutch Angle (Tilted)",
+      "degrees": "5-45° horizontal tilt",
+      "psychological_effect": "Disorientation, instability, psychological disturbance, wrongness",
+      "character_perception": "Mentally unstable, in wrong world, disoriented, chaotic",
+      "audience_feeling": "Uneasy, uncomfortable, off-balance, anxious",
+      "power_dynamic": "World is unstable, no clear power relationship",
+      "typical_usage": ["Horror", "Psychological thrillers", "Character insanity", "World gone wrong", "Villain POVs", "Drug/intoxication sequences"],
+      "avoid_when": ["Stability needed", "Realism required", "Grounding scenes"],
+      "technical_notes": "Tilt camera on roll axis. Subtle (5-15°) for unease, extreme (30-45°) for chaos. Easy to overuse, becomes cliché.",
+      "film_examples": ["The Third Man", "Battlefield Earth (overused)", "Thor (Asgard scenes)", "Most horror films"]
+    }
+  ],
+  "horizontal_angles": [
+    {
+      "angle": "Frontal (Face-On)",
+      "degrees": "0° (camera directly in front)",
+      "psychological_effect": "Confrontation, direct address, engagement, honesty (or deception)",
+      "character_perception": "Confident, confrontational, or vulnerable (depending on context)",
+      "audience_feeling": "Directly engaged, confronted, addressed",
+      "typical_usage": ["Direct address to camera", "Confessions", "Confrontations", "Mugshots", "ID shots", "Breaking fourth wall"],
+      "avoid_when": ["Need for subtlety", "Three-dimensionality desired"],
+      "technical_notes": "Flattens face. Can feel static. Often combined with eye level for neutrality or low angle for power.",
+      "film_examples": ["Ferris Bueller direct address", "House of Cards (Frank Underwood)", "The Office mockumentary"]
+    },
+    {
+      "angle": "Three-Quarter (3/4 View)",
+      "degrees": "45° off-center",
+      "psychological_effect": "Natural, dynamic, dimensional, most flattering",
+      "character_perception": "Natural, three-dimensional, engaging",
+      "audience_feeling": "Comfortable observation, natural viewing",
+      "typical_usage": ["Most dialogue", "Standard coverage", "Natural conversations", "Flattering portraits"],
+      "avoid_when": ["Direct confrontation needed", "Profile symbolism desired"],
+      "technical_notes": "Most common horizontal angle. Shows dimensionality. Flattering to most faces. Versatile baseline.",
+      "film_examples": ["Standard angle in almost all films"]
+    },
+    {
+      "angle": "Profile (Side View)",
+      "degrees": "90° (perpendicular to face)",
+      "psychological_effect": "Classical, formal, distant, two-world division, decisive",
+      "character_perception": "Decisive, classical, distant, formal, moving forward",
+      "audience_feeling": "Observer, detached, watching from outside",
+      "typical_usage": ["Classical compositions", "Walking shots", "Characters separated by barrier", "Formal portraits", "Decisive moments"],
+      "avoid_when": ["Intimacy required", "Need to see facial expressions clearly"],
+      "technical_notes": "Shows silhouette. Classical, formal composition. Often for movement across frame. Less common in modern films.",
+      "film_examples": ["Classical Hollywood", "Citizen Kane compositions"]
+    },
+    {
+      "angle": "Over-the-Shoulder (OTS)",
+      "degrees": "Slight angle, including part of another character",
+      "psychological_effect": "Conversation, perspective, involvement, spatial relationships",
+      "character_perception": "In relationship with others, conversational, connected",
+      "audience_feeling": "Inside conversation, privy to exchange, relational context",
+      "typical_usage": ["Dialogue scenes", "Conversations", "Establishing relationships", "Shot-reverse-shot", "Perspective shots"],
+      "avoid_when": ["Single character isolation", "Direct address needed"],
+      "technical_notes": "Standard dialogue coverage. Shows spatial relationship. Usually 1/3 frame is shoulder. Alternates in shot-reverse-shot.",
+      "film_examples": ["Standard in almost all dialogue scenes"]
+    },
+    {
+      "angle": "Point of View (POV)",
+      "degrees": "Camera as character's eyes",
+      "psychological_effect": "Subjective experience, empathy, immersion, identification",
+      "character_perception": "Audience becomes character",
+      "audience_feeling": "Inside character's experience, immersed, empathetic",
+      "typical_usage": ["First-person perspective", "Seeing what character sees", "Horror reveals", "Immersive moments", "Found footage"],
+      "avoid_when": ["Need objective distance", "Multiple character tracking"],
+      "technical_notes": "Camera becomes character's eyes. Can be handheld for realism. Often followed by reverse showing character's reaction.",
+      "film_examples": ["The Diving Bell and the Butterfly", "Enter the Void", "Horror POV stalking"]
+    },
+    {
+      "angle": "Back View (Rear Angle)",
+      "degrees": "180° (behind subject, facing same direction)",
+      "psychological_effect": "Mystery, journey, following, vulnerability, anonymity",
+      "character_perception": "Moving forward, mysterious, vulnerable (exposed back), leading",
+      "audience_feeling": "Following, protective, curious, observing journey",
+      "typical_usage": ["Walking away", "Mystery character introductions", "Following journey", "Vulnerable moments", "Dramatic exits"],
+      "avoid_when": ["Need to see facial reactions", "Direct engagement required"],
+      "technical_notes": "Shows back of head/body. Can create mystery before reveal. Vulnerable (can't see threats). Journey/movement emphasis.",
+      "film_examples": ["Mystery character walking away", "Blade Runner 2049 (K walking in Vegas)"]
+    }
+  ],
+  "angle_combinations": [
+    {
+      "combination": "Low Angle + Dutch Tilt",
+      "effect": "Menacing power with instability - powerful but dangerous/wrong",
+      "usage": "Villains in horror/thrillers, corrupted heroes, unstable authority figures"
+    },
+    {
+      "combination": "High Angle + Wide Lens",
+      "effect": "Extreme vulnerability and distortion - isolated and wrong",
+      "usage": "Victims, extreme emotional breakdown, surreal vulnerability"
+    },
+    {
+      "combination": "Eye Level + Frontal",
+      "effect": "Direct, honest confrontation - engaged honesty or lies",
+      "usage": "Confessions, direct address, breaking fourth wall, interviews"
+    },
+    {
+      "combination": "Overhead + Symmetry",
+      "effect": "God's view of perfect order or pattern",
+      "usage": "Wes Anderson films, dance choreography, death scenes, fate"
+    },
+    {
+      "combination": "Low Angle + Backlight",
+      "effect": "Heroic silhouette power",
+      "usage": "Hero introductions, triumphant moments, divine imagery"
+    }
+  ],
+  "practical_guidelines": {
+    "power_dynamics": {
+      "dominant_character": "Low angle, camera below",
+      "submissive_character": "High angle, camera above",
+      "equal_characters": "Eye level, matching angles",
+      "shifting_power": "Change angles during scene to show power shift"
+    },
+    "emotional_states": {
+      "confidence": "Low angle, eye level frontal",
+      "vulnerability": "High angle, wide framing",
+      "instability": "Dutch angle, varying degrees",
+      "isolation": "High angle with negative space",
+      "confrontation": "Eye level frontal or low angle frontal"
+    },
+    "psychological_states": {
+      "sanity": "Level, stable framing",
+      "insanity": "Dutch angles, extreme angles, unstable",
+      "objectivity": "Eye level, neutral framing",
+      "subjectivity": "POV, extreme angles matching character perception"
+    }
+  },
+  "metadata": {
+    "total_angles": 15,
+    "created_by": "MSI-VPE Project Team",
+    "last_updated": "2024-01-15",
+    "sources": [
+      "The Visual Story by Bruce Block",
+      "Grammar of the Film Language by Daniel Arijon",
+      "Master Shots Vol. 1-3 by Christopher Kenworthy",
+      "Film Directing Shot by Shot by Steven Katz",
+      "Cinematic Storytelling by Jennifer Van Sijll"
+    ],
+    "usage_notes": "Angles are relative to subject's eye level and facing direction. Degrees are approximate guidelines. Context and story dictate usage. Combine angles with lighting and composition for maximum effect. Breaking conventions should be purposeful."
+  }
+}

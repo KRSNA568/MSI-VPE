@@ -1,0 +1,201 @@
+# MSI-VPE Git Ignore
+# Comprehensive .gitignore for Python/Node/AI project
+
+# ============================================================================
+# Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# ============================================================================
+# Node.js / Frontend
+# ============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+lerna-debug.log*
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+
+# ============================================================================
+# AI/ML Models & Data
+# ============================================================================
+# Large model files (download on-demand)
+models/
+*.pkl
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Hugging Face cache (can be large)
+.cache/
+transformers_cache/
+huggingface/
+
+# Data files
+data/
+*.csv
+*.tsv
+*.json.bak
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================================================
+# macOS
+# ============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# ============================================================================
+# Windows
+# ============================================================================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ============================================================================
+# Linux
+# ============================================================================
+*~
+.nfs*
+
+# ============================================================================
+# Project Specific
+# ============================================================================
+# Sample scripts (may contain copyrighted material)
+sample-scripts/*.fountain
+sample-scripts/*.pdf
+
+# Test outputs
+test-outputs/
+temp/
+tmp/
+
+# Generated reports
+reports/
+*.pdf
+
+# Secrets
+secrets/
+*.key
+*.pem
+.env.production
+
+# ============================================================================
+# IDEs
+# ============================================================================
+*.swp
+*.swo
+*.swn
+.vimrc.local
+
+# ============================================================================
+# Documentation Build
+# ============================================================================
+docs/_build/
+docs/.doctrees/
+
+# ============================================================================
+# Backup files
+# ============================================================================
+*.bak
+*.backup
+*~
+
+# ============================================================================
+# OS specific
+# ============================================================================
+*.orig
+*.rej
+
+# ============================================================================
+# Deployment
+# ============================================================================
+.vercel
+.netlify
+.railway
+
+# ============================================================================
+# KEEP THESE (explicitly not ignored)
+# ============================================================================
+!.gitkeep
+!knowledge-base/*.json
+!sample-scripts/example.fountain

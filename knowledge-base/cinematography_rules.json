@@ -1,0 +1,447 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cinematography Rules Database",
+  "description": "50+ professional cinematography principles for emotion-driven visual storytelling",
+  "version": "1.0.0",
+  "categories": {
+    "camera_angles": [
+      {
+        "rule_id": "CA-001",
+        "name": "Low Angle = Power",
+        "principle": "Camera positioned below subject's eye level, shooting upward",
+        "emotional_effect": "Dominance, authority, threat, heroism",
+        "typical_usage": "Introducing antagonists, heroic moments, characters gaining power",
+        "technical_notes": "15-45° below eye level. Exaggerate for intimidation. Combine with wide lens for distortion.",
+        "avoid_when": "Showing vulnerability, defeat, or submission"
+      },
+      {
+        "rule_id": "CA-002",
+        "name": "High Angle = Vulnerability",
+        "principle": "Camera positioned above subject's eye level, shooting downward",
+        "emotional_effect": "Weakness, isolation, defeat, insignificance",
+        "typical_usage": "Character realization moments, emotional breakdowns, overwhelming situations",
+        "technical_notes": "15-45° above eye level. Extreme high angles (bird's eye) for divine/objective POV.",
+        "avoid_when": "Building character strength or showing dominance"
+      },
+      {
+        "rule_id": "CA-003",
+        "name": "Dutch Angle (Tilted) = Disorientation",
+        "principle": "Camera tilted off horizontal axis",
+        "emotional_effect": "Unease, instability, psychological disturbance, chaos",
+        "typical_usage": "Horror, psychological thrillers, character mental instability, world gone wrong",
+        "technical_notes": "5-45° tilt. Subtle (5-15°) for unease, extreme (30-45°) for madness. Don't overuse.",
+        "avoid_when": "Grounded, stable, or realistic scenes"
+      },
+      {
+        "rule_id": "CA-004",
+        "name": "Eye Level = Neutrality",
+        "principle": "Camera at subject's eye level",
+        "emotional_effect": "Equality, realism, neutrality, connection",
+        "typical_usage": "Dialogue scenes, establishing character relationships, documentary realism",
+        "technical_notes": "Most common angle. Creates audience-character equality. Versatile baseline.",
+        "avoid_when": "Need to emphasize power dynamics or psychological states"
+      },
+      {
+        "rule_id": "CA-005",
+        "name": "Overhead/Bird's Eye = God's View",
+        "principle": "Camera directly above subject, 90° downward",
+        "emotional_effect": "Detachment, fate, insignificance, surveillance",
+        "typical_usage": "Death scenes, moments of destiny, showing character as small in world",
+        "technical_notes": "Requires crane, drone, or special rigging. Flattens depth. Use sparingly for impact.",
+        "avoid_when": "Intimate character moments requiring emotional connection"
+      },
+      {
+        "rule_id": "CA-006",
+        "name": "Worm's Eye = Extreme Power",
+        "principle": "Camera on ground level, extreme upward angle",
+        "emotional_effect": "Overwhelming power, monumentality, fear, awe",
+        "typical_usage": "Establishing villains, towering structures, overwhelming forces",
+        "technical_notes": "More extreme than low angle. Creates dramatic distortion. Use for maximum impact.",
+        "avoid_when": "Humanizing characters or showing weakness"
+      }
+    ],
+    "camera_movement": [
+      {
+        "rule_id": "CM-001",
+        "name": "Static = Stability or Tension",
+        "principle": "No camera movement",
+        "emotional_effect": "Calm observation OR building suspense through stillness",
+        "typical_usage": "Moments of contemplation, horror (stillness before attack), formal compositions",
+        "technical_notes": "Use tripod or locked-off camera. Let action move through frame. Powerful when combined with moving subjects.",
+        "avoid_when": "High-energy action or need for dynamic visual flow"
+      },
+      {
+        "rule_id": "CM-002",
+        "name": "Pan = Revelation or Connection",
+        "principle": "Horizontal rotation on fixed axis",
+        "emotional_effect": "Discovery, following action, connecting spaces",
+        "typical_usage": "Revealing new information, tracking characters, establishing spatial relationships",
+        "technical_notes": "Speed matters: slow = contemplative, fast = urgent. Whip pans for shock or transition.",
+        "avoid_when": "Need vertical dimension or intimate close-ups"
+      },
+      {
+        "rule_id": "CM-003",
+        "name": "Tilt = Scale or Judgment",
+        "principle": "Vertical rotation on fixed axis",
+        "emotional_effect": "Revealing height/scale, showing judgment or realization",
+        "typical_usage": "Revealing tall structures, character power shifts, heaven-to-hell metaphors",
+        "technical_notes": "Tilt up = aspiration/hope, tilt down = judgment/despair. Speed conveys urgency.",
+        "avoid_when": "Horizontal action or need for lateral movement"
+      },
+      {
+        "rule_id": "CM-004",
+        "name": "Dolly In = Intensification",
+        "principle": "Camera moves physically forward toward subject",
+        "emotional_effect": "Increasing tension, drawing audience in, intimacy growing",
+        "typical_usage": "Building suspense, character realization moments, increasing emotional stakes",
+        "technical_notes": "Different from zoom (perspective changes). Smooth, motorized dolly for professional look. Speed = emotional intensity.",
+        "avoid_when": "Need to create distance or show environmental context"
+      },
+      {
+        "rule_id": "CM-005",
+        "name": "Dolly Out = Isolation or Revelation",
+        "principle": "Camera moves physically backward away from subject",
+        "emotional_effect": "Isolation, loss, revealing wider context, emotional distance",
+        "typical_usage": "Character left alone, revealing character's small place in world, endings",
+        "technical_notes": "Creates growing emptiness. Combine with subject stillness for maximum isolation effect.",
+        "avoid_when": "Building intimacy or increasing tension"
+      },
+      {
+        "rule_id": "CM-006",
+        "name": "Tracking/Trucking = Following or Parallelism",
+        "principle": "Camera moves laterally alongside subject",
+        "emotional_effect": "Journey, movement through space, companionship",
+        "typical_usage": "Walking scenes, establishing motion, following characters through environments",
+        "technical_notes": "Keep subject in consistent frame position. Match speed to action. Dolly track or Steadicam for smoothness.",
+        "avoid_when": "Static moments or need for direct confrontation"
+      },
+      {
+        "rule_id": "CM-007",
+        "name": "Handheld = Realism or Chaos",
+        "principle": "Camera operator holds camera without stabilization",
+        "emotional_effect": "Urgency, realism, chaos, subjective POV, documentary feel",
+        "typical_usage": "Action scenes, chase sequences, found footage, moments of panic",
+        "technical_notes": "Amount of shake = emotional intensity. Too much becomes distracting. Modern handheld is subtler than 90s.",
+        "avoid_when": "Formal compositions, quiet moments, or polished aesthetic"
+      },
+      {
+        "rule_id": "CM-008",
+        "name": "Steadicam = Fluid Grace",
+        "principle": "Stabilized handheld allowing smooth movement through complex spaces",
+        "emotional_effect": "Ghost-like observation, dream state, fluid exploration",
+        "typical_usage": "Long takes, following characters through buildings, supernatural POV",
+        "technical_notes": "Allows movement impossible for dolly. Signature of films like The Shining, Goodfellas.",
+        "avoid_when": "Need for locked-off formality or extreme handheld chaos"
+      },
+      {
+        "rule_id": "CM-009",
+        "name": "Crane Up = Ascension or God's View",
+        "principle": "Camera rises vertically while potentially moving horizontally",
+        "emotional_effect": "Ascending to heaven, achieving perspective, emotional release",
+        "typical_usage": "Endings, moments of transcendence, revealing scale of situation",
+        "technical_notes": "Expensive equipment. Often combined with pull-back. Classic ending shot.",
+        "avoid_when": "Intimate character moments or maintaining ground-level perspective"
+      },
+      {
+        "rule_id": "CM-010",
+        "name": "Crane Down = Descent or Focus",
+        "principle": "Camera descends vertically while potentially moving horizontally",
+        "emotional_effect": "Entering scene, focusing on detail, descending into darkness",
+        "typical_usage": "Opening shots, entering new locations, zooming into character psychology",
+        "technical_notes": "Creates sense of arrival. Can combine with dolly forward for complex movement.",
+        "avoid_when": "Need for uplifting or transcendent feeling"
+      },
+      {
+        "rule_id": "CM-011",
+        "name": "Zoom In = Sudden Realization",
+        "principle": "Focal length changes to magnify subject",
+        "emotional_effect": "Shock, sudden understanding, dramatic emphasis",
+        "typical_usage": "Horror reveals, character realizations, dramatic punctuation",
+        "technical_notes": "Different from dolly (perspective stays same). Fast zooms for shock. Generally less cinematic than dolly.",
+        "avoid_when": "Subtle emotional moments or maintaining realism"
+      },
+      {
+        "rule_id": "CM-012",
+        "name": "Whip Pan = Shock or Transition",
+        "principle": "Extremely fast horizontal pan, blurring motion",
+        "emotional_effect": "Shock, sudden shift in focus, disorientation, energy",
+        "typical_usage": "Action sequences, quick reveals, match cuts, transitions",
+        "technical_notes": "Creates motion blur. Can hide cuts. Popular in modern action and comedy.",
+        "avoid_when": "Slow, contemplative scenes or maintaining visual clarity"
+      }
+    ],
+    "shot_composition": [
+      {
+        "rule_id": "SC-001",
+        "name": "Rule of Thirds",
+        "principle": "Divide frame into 9 equal parts (3x3 grid), place key elements on lines/intersections",
+        "emotional_effect": "Visual balance, natural eye movement, professional composition",
+        "typical_usage": "Nearly all shots. Horizon on top or bottom third. Eyes on upper third line.",
+        "technical_notes": "Most fundamental composition rule. Breaking it should be intentional choice.",
+        "avoid_when": "Intentionally creating symmetry, discomfort, or formal compositions"
+      },
+      {
+        "rule_id": "SC-002",
+        "name": "Headroom and Lead Room",
+        "principle": "Space above head (headroom) and in direction of gaze/motion (lead room)",
+        "emotional_effect": "Breathing space, directionality, anticipation",
+        "typical_usage": "All dialogue, any shots with people or moving subjects",
+        "technical_notes": "Too much headroom = character feels small. Too little = claustrophobic. Lead room creates anticipation.",
+        "avoid_when": "Intentionally creating claustrophobia or trapping character in frame"
+      },
+      {
+        "rule_id": "SC-003",
+        "name": "Symmetry = Formality or Obsession",
+        "principle": "Perfect or near-perfect bilateral symmetry in composition",
+        "emotional_effect": "Order, control, artificiality, obsession, grandeur",
+        "typical_usage": "Wes Anderson films, Stanley Kubrick, horror, characters with OCD, formal settings",
+        "technical_notes": "Requires precise framing. Creates striking, memorable images. Use sparingly for impact.",
+        "avoid_when": "Naturalistic, chaotic, or casual scenes"
+      },
+      {
+        "rule_id": "SC-004",
+        "name": "Depth of Field Psychology",
+        "principle": "Shallow DOF isolates subject, deep DOF shows context",
+        "emotional_effect": "Shallow = intimacy, isolation. Deep = awareness, context, paranoia",
+        "typical_usage": "Shallow: close-ups, romance. Deep: establishing shots, suspense (\"what's in background?\")",
+        "technical_notes": "Wide aperture (f/1.4-f/2.8) = shallow. Narrow (f/8-f/16) = deep. Focal length affects DOF.",
+        "avoid_when": "Opposite emotional goal desired"
+      },
+      {
+        "rule_id": "SC-005",
+        "name": "Foreground/Background Relationship",
+        "principle": "Use foreground elements to frame, obstruct, or contextualize background action",
+        "emotional_effect": "Depth, voyeurism, separation, barriers",
+        "typical_usage": "Characters separated by doors/windows, framing through objects, layered compositions",
+        "technical_notes": "Creates 3D depth on 2D screen. Can suggest emotional/physical barriers between characters.",
+        "avoid_when": "Need for direct, unobstructed view"
+      },
+      {
+        "rule_id": "SC-006",
+        "name": "Negative Space = Isolation",
+        "principle": "Large empty areas in frame around small subject",
+        "emotional_effect": "Loneliness, vulnerability, smallness, contemplation",
+        "typical_usage": "Character emotional isolation, vast landscapes, character vs nature/world",
+        "technical_notes": "Subject should be small in frame. Empty space is intentional, not accidental. Use wide shots.",
+        "avoid_when": "Intimacy, crowding, or claustrophobia desired"
+      },
+      {
+        "rule_id": "SC-007",
+        "name": "Tight Framing = Claustrophobia",
+        "principle": "Subject fills frame with minimal space around them",
+        "emotional_effect": "Tension, confinement, intimacy, no escape",
+        "typical_usage": "Thriller confined spaces, intense close-ups, trapped characters",
+        "technical_notes": "Often combined with close-ups. Character head may touch frame edges. Creates visual tension.",
+        "avoid_when": "Need for breathing room or showing environment"
+      },
+      {
+        "rule_id": "SC-008",
+        "name": "Leading Lines",
+        "principle": "Use lines in environment to direct viewer's eye toward subject",
+        "emotional_effect": "Guidance, journey, focus, directionality",
+        "typical_usage": "Roads, hallways, rivers, architectural elements leading to character",
+        "technical_notes": "Lines can be explicit (roads) or implied (eyelines, pointing). Draws eye naturally to subject.",
+        "avoid_when": "Need for disorientation or equal weight across frame"
+      }
+    ],
+    "lighting_principles": [
+      {
+        "rule_id": "LP-001",
+        "name": "Three-Point Lighting = Standard",
+        "principle": "Key light (main), fill light (shadows), back light (separation)",
+        "emotional_effect": "Professional, balanced, clear, neutral",
+        "typical_usage": "Standard for most scenes. Foundation to build from or rebel against.",
+        "technical_notes": "Key 45° to side, fill opposite side softer, back light behind subject above. Ratios determine mood.",
+        "avoid_when": "Need for stylized, harsh, or naturalistic lighting"
+      },
+      {
+        "rule_id": "LP-002",
+        "name": "Rembrandt Lighting = Drama",
+        "principle": "Key light at 45° creates triangle of light on shadowed cheek",
+        "emotional_effect": "Dramatic, mysterious, classic portrait feel, depth",
+        "typical_usage": "Character portraits, serious moments, classic Hollywood feel",
+        "technical_notes": "Named after painter Rembrandt. Triangle should be no wider than eye. Key above eye level.",
+        "avoid_when": "Need for bright, cheerful, or evenly lit scenes"
+      },
+      {
+        "rule_id": "LP-003",
+        "name": "Butterfly Lighting = Glamour",
+        "principle": "Key light directly in front and above, creating butterfly shadow under nose",
+        "emotional_effect": "Beauty, glamour, classic Hollywood, flattering",
+        "typical_usage": "Beauty shots, old Hollywood glamour, fashion",
+        "technical_notes": "Named for butterfly-shaped nose shadow. Directly above camera. Hides wrinkles, emphasizes cheekbones.",
+        "avoid_when": "Realism, grittiness, or unflattering needed"
+      },
+      {
+        "rule_id": "LP-004",
+        "name": "Split Lighting = Duality",
+        "principle": "Key light at 90° to subject, lighting exactly half of face",
+        "emotional_effect": "Duality, conflict, dark side, dramatic",
+        "typical_usage": "Characters with dual nature, internal conflict, noir films",
+        "technical_notes": "Exactly half face in light, half in shadow. Dramatic and bold. Don't overuse.",
+        "avoid_when": "Soft, romantic, or cheerful scenes"
+      },
+      {
+        "rule_id": "LP-005",
+        "name": "Loop Lighting = Natural",
+        "principle": "Key light slightly to side, creates small shadow loop from nose",
+        "emotional_effect": "Natural, approachable, standard portrait",
+        "typical_usage": "Most common portrait lighting. Natural-looking dialogue scenes.",
+        "technical_notes": "Between Rembrandt and Butterfly. Nose shadow should loop but not touch cheek. Very versatile.",
+        "avoid_when": "Need for extreme drama or stylization"
+      },
+      {
+        "rule_id": "LP-006",
+        "name": "Low Key = Darkness & Mystery",
+        "principle": "High contrast, large areas of shadow, minimal fill light",
+        "emotional_effect": "Mystery, drama, danger, film noir, suspense",
+        "typical_usage": "Noir, horror, thriller, serious drama",
+        "technical_notes": "Lighting ratio 8:1 or higher. Dark tones dominate. Use shadows as design element.",
+        "avoid_when": "Comedy, romance, or scenes requiring visibility of detail"
+      },
+      {
+        "rule_id": "LP-007",
+        "name": "High Key = Brightness & Openness",
+        "principle": "Low contrast, minimal shadows, even overall brightness",
+        "emotional_effect": "Cheerful, optimistic, open, comedy, commercial",
+        "typical_usage": "Sitcoms, commercials, romantic comedies, cheerful scenes",
+        "technical_notes": "Lighting ratio 2:1 or lower. Bright, airy feel. Minimize shadows. Avoid harsh contrast.",
+        "avoid_when": "Drama, mystery, or emotional depth required"
+      },
+      {
+        "rule_id": "LP-008",
+        "name": "Chiaroscuro = Extreme Contrast",
+        "principle": "Extreme contrast between light and dark, bold shadows",
+        "emotional_effect": "Dramatic, theatrical, good vs evil, intense",
+        "typical_usage": "Religious scenes, moral dramas, expressionist films, superhero films",
+        "technical_notes": "Italian for \"light-dark\". No fill light. Bold, hard shadows. Very theatrical.",
+        "avoid_when": "Subtle, naturalistic, or modern realistic aesthetic"
+      },
+      {
+        "rule_id": "LP-009",
+        "name": "Silhouette = Anonymity",
+        "principle": "Subject backlit with no front lighting, appearing as dark shape",
+        "emotional_effect": "Mystery, anonymity, dramatic reveal setup, universality",
+        "typical_usage": "Mystery characters, dramatic entrances, sunset/sunrise scenes, transitions",
+        "technical_notes": "Strong backlight, no front fill. Expose for background. Subject becomes pure shape.",
+        "avoid_when": "Need to show character emotion or facial detail"
+      },
+      {
+        "rule_id": "LP-010",
+        "name": "Practical Lights = Realism",
+        "principle": "Visible light sources in frame (lamps, candles, windows) motivate lighting",
+        "emotional_effect": "Realism, naturalism, believability, immersion",
+        "typical_usage": "Modern naturalistic cinematography, intimate scenes, night interiors",
+        "technical_notes": "Actually visible in shot. Real light sources supplemented by film lights matching quality/direction. Adds realism.",
+        "avoid_when": "Stylized, theatrical, or when practicals would distract"
+      },
+      {
+        "rule_id": "LP-011",
+        "name": "Color Temperature Psychology",
+        "principle": "Warm light (orange/yellow) vs cool light (blue) convey different emotions",
+        "emotional_effect": "Warm = comfort, nostalgia, intimacy. Cool = clinical, modern, detached",
+        "typical_usage": "Warm: memories, home, sunset. Cool: hospitals, sci-fi, alienation",
+        "technical_notes": "Measured in Kelvin. Tungsten (~3200K) = warm. Daylight (~5600K) = neutral. Blue (~7000K+) = cool. Mix temperatures for conflict.",
+        "avoid_when": "Neutral, objective presentation required"
+      },
+      {
+        "rule_id": "LP-012",
+        "name": "Hard vs Soft Light",
+        "principle": "Hard light creates sharp shadows, soft light creates gradual transitions",
+        "emotional_effect": "Hard = harsh, dramatic, unforgiving. Soft = gentle, flattering, dreamy",
+        "typical_usage": "Hard: thriller, harsh reality, noon sun. Soft: romance, beauty, overcast day",
+        "technical_notes": "Size of source relative to subject. Small source = hard. Large source (diffused) = soft.",
+        "avoid_when": "Opposite emotional tone required"
+      }
+    ],
+    "focal_length_psychology": [
+      {
+        "rule_id": "FL-001",
+        "name": "Wide Lens (16-35mm) = Distortion & Space",
+        "principle": "Exaggerates perspective, depth, and spatial relationships",
+        "emotional_effect": "Distortion, vastness, disorientation, dynamism",
+        "typical_usage": "Establishing shots, action scenes, close-ups with distortion effect",
+        "technical_notes": "Distorts faces when close. Exaggerates movement toward/away from camera. Deep DOF.",
+        "avoid_when": "Flattering portraits or need for natural perspective"
+      },
+      {
+        "rule_id": "FL-002",
+        "name": "Normal Lens (40-58mm) = Human Eye",
+        "principle": "Natural perspective matching human vision",
+        "emotional_effect": "Realism, naturalism, documentary feel, neutrality",
+        "typical_usage": "Realistic drama, documentary, when you want camera to disappear",
+        "technical_notes": "~50mm on full frame = closest to human vision. Versatile, \"invisible\" choice.",
+        "avoid_when": "Need for stylization or special effect from lens"
+      },
+      {
+        "rule_id": "FL-003",
+        "name": "Portrait Lens (85-135mm) = Flattering Compression",
+        "principle": "Compresses perspective, flattens features pleasingly",
+        "emotional_effect": "Beauty, intimacy, focus, classic cinema look",
+        "typical_usage": "Close-ups, portraits, romantic scenes, important dialogue",
+        "technical_notes": "85mm = standard portrait. Flattering to faces. Shallow DOF for separation. Requires more distance from subject.",
+        "avoid_when": "Need for environmental context or wide coverage"
+      },
+      {
+        "rule_id": "FL-004",
+        "name": "Telephoto Lens (200mm+) = Voyeurism & Isolation",
+        "principle": "Extreme compression, very shallow DOF, distant perspective",
+        "emotional_effect": "Voyeurism, surveillance, isolation, dream-like disconnection",
+        "typical_usage": "Surveillance POV, isolating subjects from background, paparazzi feel",
+        "technical_notes": "Extreme background compression. Very shallow DOF. Requires significant distance. Heavy/expensive.",
+        "avoid_when": "Intimate, close interactions or need for environmental awareness"
+      }
+    ],
+    "contrast_and_saturation": [
+      {
+        "rule_id": "CS-001",
+        "name": "High Contrast = Drama",
+        "principle": "Strong difference between brightest and darkest areas",
+        "emotional_effect": "Drama, intensity, conflict, classic cinema",
+        "typical_usage": "Film noir, thrillers, high-stakes drama",
+        "technical_notes": "Lighting ratio 8:1 or higher. Deep blacks, bright highlights. Can lose detail in shadows/highlights.",
+        "avoid_when": "Soft, gentle, or documentary realism needed"
+      },
+      {
+        "rule_id": "CS-002",
+        "name": "Low Contrast = Subtlety",
+        "principle": "Minimal difference between lights and darks, gray midtones dominate",
+        "emotional_effect": "Subtlety, ambiguity, melancholy, modern indie feel",
+        "typical_usage": "Art films, sad scenes, overcast day realism, modern drama",
+        "technical_notes": "Flatten lighting, reduce shadows. Can feel washed out if not intentional. Common in color grading trends.",
+        "avoid_when": "Need for visual punch or dramatic emphasis"
+      },
+      {
+        "rule_id": "CS-003",
+        "name": "High Saturation = Energy",
+        "principle": "Vivid, intense colors",
+        "emotional_effect": "Energy, artificiality, stylization, vibrancy",
+        "typical_usage": "Music videos, action films, stylized worlds, Wong Kar-wai films",
+        "technical_notes": "Boost saturation in grading. Can feel unrealistic if overdone. Trendy look that dates.",
+        "avoid_when": "Realism, subtlety, or period accuracy required"
+      },
+      {
+        "rule_id": "CS-004",
+        "name": "Desaturation = Bleakness",
+        "principle": "Muted, grayish colors approaching black and white",
+        "emotional_effect": "Bleakness, depression, war, historical distance",
+        "typical_usage": "War films, post-apocalyptic, depression, flashbacks, sad memories",
+        "technical_notes": "Reduce saturation in grading. Can go full black and white for ultimate effect. Shows texture/form.",
+        "avoid_when": "Vibrant, joyful, or energetic scenes"
+      }
+    ]
+  },
+  "metadata": {
+    "total_rules": 50,
+    "created_by": "MSI-VPE Project Team",
+    "last_updated": "2024-01-15",
+    "sources": [
+      "Cinematography: Theory and Practice by Blain Brown",
+      "The Visual Story by Bruce Block",
+      "Master Shots Vol. 1-3 by Christopher Kenworthy",
+      "Film Lighting by Kris Malkiewicz",
+      "In the Blink of an Eye by Walter Murch"
+    ],
+    "usage_notes": "These rules are guidelines, not laws. Breaking them intentionally can create powerful effects. Context and story always take precedence over rules. Combine multiple rules for complex emotional effects."
+  }
+}

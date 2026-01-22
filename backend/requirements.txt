@@ -1,0 +1,87 @@
+# MSI-VPE Backend Requirements
+# Python 3.11+ required
+# Date: January 23, 2026
+
+# ============================================================================
+# Web Framework
+# ============================================================================
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6  # For file uploads
+
+# ============================================================================
+# Data Validation & Serialization
+# ============================================================================
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# ============================================================================
+# AI/ML - Emotion Detection
+# ============================================================================
+transformers==4.37.0
+torch==2.1.2  # CPU version, use torch==2.1.2+cu118 for GPU
+sentencepiece==0.1.99  # For certain tokenizers
+accelerate==0.26.1  # For model loading optimization
+
+# ============================================================================
+# NLP & Text Processing
+# ============================================================================
+spacy==3.7.2  # Optional but useful for advanced parsing
+# python -m spacy download en_core_web_sm  # Run after install
+
+# ============================================================================
+# Database
+# ============================================================================
+sqlalchemy==2.0.25
+alembic==1.13.1  # Database migrations
+aiosqlite==0.19.0  # Async SQLite support
+
+# ============================================================================
+# Utilities
+# ============================================================================
+python-dotenv==1.0.0  # Environment variables
+pyyaml==6.0.1  # YAML configuration files
+python-json-logger==2.0.7  # Structured logging
+
+# ============================================================================
+# HTTP & API
+# ============================================================================
+httpx==0.26.0  # Async HTTP client
+requests==2.31.0  # Sync HTTP client (backup)
+
+# ============================================================================
+# Testing
+# ============================================================================
+pytest==7.4.4
+pytest-asyncio==0.23.3
+pytest-cov==4.1.0  # Coverage reporting
+pytest-mock==3.12.0
+httpx==0.26.0  # For testing FastAPI
+
+# ============================================================================
+# Code Quality
+# ============================================================================
+black==23.12.1  # Code formatter
+ruff==0.1.11  # Linter (replaces flake8, isort, etc.)
+mypy==1.8.0  # Type checking
+
+# ============================================================================
+# Development
+# ============================================================================
+ipython==8.20.0  # Better REPL
+jupyter==1.0.0  # Notebooks for experimentation
+
+# ============================================================================
+# Performance & Monitoring
+# ============================================================================
+prometheus-client==0.19.0  # Metrics
+sentry-sdk[fastapi]==1.40.0  # Error tracking (optional)
+
+# ============================================================================
+# Optional: Enhanced Features
+# ============================================================================
+# redis==5.0.1  # For caching (if using Redis)
+# celery==5.3.6  # For task queue (if needed)
+# pillow==10.2.0  # Image generation for visualizations
+# matplotlib==3.8.2  # Plotting emotion graphs
+# numpy==1.26.3  # Numerical operations

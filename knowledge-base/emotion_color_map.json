@@ -1,0 +1,281 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Emotion-to-Color Mapping Database",
+  "description": "Comprehensive mapping of 20+ emotions to color palettes with hex codes for cinematography planning",
+  "version": "1.0.0",
+  "emotions": [
+    {
+      "emotion": "Joy",
+      "category": "primary",
+      "color_palette": {
+        "primary": ["#FFD700", "#FFA500"],
+        "secondary": ["#FBBF24", "#FEF3C7"],
+        "accent": ["#FB923C", "#FDBA74", "#FED7AA"]
+      },
+      "saturation_level": "high",
+      "brightness_level": "high",
+      "psychological_effect": "Energy, warmth, optimism, celebration",
+      "cinematography_notes": "Use warm yellows and golds for genuine happiness. Avoid oversaturation that becomes garish. Lens flares and golden hour lighting amplify joy."
+    },
+    {
+      "emotion": "Sadness",
+      "category": "primary",
+      "color_palette": {
+        "primary": ["#1E3A8A", "#1E40AF"],
+        "secondary": ["#60A5FA", "#93C5FD"],
+        "accent": ["#DBEAFE", "#334155", "#64748B"]
+      },
+      "saturation_level": "low",
+      "brightness_level": "low",
+      "psychological_effect": "Melancholy, isolation, contemplation, loss",
+      "cinematography_notes": "Desaturated blues convey emotional numbness. Overcast skies, rain, and blue hour lighting enhance sadness. Avoid warm tones."
+    },
+    {
+      "emotion": "Anger",
+      "category": "primary",
+      "color_palette": {
+        "primary": ["#B91C1C", "#DC2626"],
+        "secondary": ["#EF4444", "#F87171"],
+        "accent": ["#FCA5A5", "#831843", "#9F1239"]
+      },
+      "saturation_level": "high",
+      "brightness_level": "medium",
+      "psychological_effect": "Aggression, danger, tension, volatility",
+      "cinematography_notes": "Intense reds signal danger and rage. Use aggressive lighting with hard shadows. Red gels and practical lights (neon signs) amplify tension."
+    },
+    {
+      "emotion": "Fear",
+      "category": "primary",
+      "color_palette": {
+        "primary": ["#1F2937", "#111827"],
+        "secondary": ["#4B5563", "#6B7280"],
+        "accent": ["#9CA3AF", "#052E16", "#14532D"]
+      },
+      "saturation_level": "very_low",
+      "brightness_level": "very_low",
+      "psychological_effect": "Dread, anxiety, vulnerability, danger",
+      "cinematography_notes": "Near-black with hints of sickly green creates unease. Harsh shadows, underexposure, and practical lights (flashlights) emphasize vulnerability. Avoid warm safety."
+    },
+    {
+      "emotion": "Disgust",
+      "category": "primary",
+      "color_palette": {
+        "primary": ["#4D7C0F", "#65A30D"],
+        "secondary": ["#84CC16", "#A3E635"],
+        "accent": ["#D9F99D", "#713F12", "#854D0E"]
+      },
+      "saturation_level": "medium",
+      "brightness_level": "medium",
+      "psychological_effect": "Revulsion, contamination, moral corruption",
+      "cinematography_notes": "Sickly greens and bile yellows suggest contamination. Fluorescent lighting enhances unpleasantness. Use in horror and decay scenes."
+    },
+    {
+      "emotion": "Surprise",
+      "category": "primary",
+      "color_palette": {
+        "primary": ["#F0ABFC", "#E879F9"],
+        "secondary": ["#C026D3", "#A21CAF"],
+        "accent": ["#FAE8FF", "#FBBF24", "#FCD34D"]
+      },
+      "saturation_level": "high",
+      "brightness_level": "high",
+      "psychological_effect": "Shock, revelation, discovery, wonder",
+      "cinematography_notes": "Bright magentas and unexpected yellows signal disruption. Use sudden lighting changes, lens flares, or color shifts to amplify surprise."
+    },
+    {
+      "emotion": "Anticipation",
+      "category": "secondary",
+      "color_palette": {
+        "primary": ["#F59E0B", "#D97706"],
+        "secondary": ["#FBBF24", "#FCD34D"],
+        "accent": ["#FEF3C7", "#7C2D12", "#92400E"]
+      },
+      "saturation_level": "medium-high",
+      "brightness_level": "medium",
+      "psychological_effect": "Tension, expectation, suspense, readiness",
+      "cinematography_notes": "Warm oranges and ambers suggest rising action. Use gradual lighting builds and shadows to create suspense. Golden hour transitions work well."
+    },
+    {
+      "emotion": "Trust",
+      "category": "secondary",
+      "color_palette": {
+        "primary": ["#0EA5E9", "#0284C7"],
+        "secondary": ["#38BDF8", "#7DD3FC"],
+        "accent": ["#E0F2FE", "#065F46", "#047857"]
+      },
+      "saturation_level": "medium",
+      "brightness_level": "medium-high",
+      "psychological_effect": "Safety, reliability, calm, stability",
+      "cinematography_notes": "Clear blues and soft greens convey safety and honesty. Even lighting without harsh shadows builds trust. Natural daylight enhances authenticity."
+    },
+    {
+      "emotion": "Confusion",
+      "category": "secondary",
+      "color_palette": {
+        "primary": ["#7C3AED", "#6D28D9"],
+        "secondary": ["#A78BFA", "#C4B5FD"],
+        "accent": ["#EDE9FE", "#FACC15", "#FDE047"]
+      },
+      "saturation_level": "medium",
+      "brightness_level": "medium",
+      "psychological_effect": "Disorientation, uncertainty, questioning",
+      "cinematography_notes": "Purples and yellows clash to create visual dissonance. Use conflicting color temperatures (tungsten vs daylight) to amplify confusion. Dutch angles help."
+    },
+    {
+      "emotion": "Contempt",
+      "category": "secondary",
+      "color_palette": {
+        "primary": ["#78716C", "#57534E"],
+        "secondary": ["#A8A29E", "#D6D3D1"],
+        "accent": ["#F5F5F4", "#4D7C0F", "#65A30D"]
+      },
+      "saturation_level": "very_low",
+      "brightness_level": "low-medium",
+      "psychological_effect": "Disdain, superiority, dismissal, coldness",
+      "cinematography_notes": "Cold grays and desaturated greens suggest emotional distance. Clinical lighting without warmth. High-key flat lighting can amplify detachment."
+    },
+    {
+      "emotion": "Shame",
+      "category": "secondary",
+      "color_palette": {
+        "primary": ["#831843", "#9F1239"],
+        "secondary": ["#BE185D", "#DB2777"],
+        "accent": ["#FDF2F8", "#1F2937", "#374151"]
+      },
+      "saturation_level": "medium-low",
+      "brightness_level": "low",
+      "psychological_effect": "Humiliation, guilt, unworthiness, exposure",
+      "cinematography_notes": "Muted reds and dark grays evoke shame. Use underexposure and shadows to suggest hiding. Backlight or silhouettes work well."
+    },
+    {
+      "emotion": "Love",
+      "category": "tertiary",
+      "color_palette": {
+        "primary": ["#F472B6", "#EC4899"],
+        "secondary": ["#FCA5A5", "#FECACA"],
+        "accent": ["#FEE2E2", "#FFD700", "#FFA500"]
+      },
+      "saturation_level": "high",
+      "brightness_level": "high",
+      "psychological_effect": "Tenderness, connection, intimacy, warmth",
+      "cinematography_notes": "Soft pinks and warm golds create romance. Use soft lighting, diffusion filters, and golden hour. Lens flares and bokeh enhance intimacy."
+    },
+    {
+      "emotion": "Jealousy",
+      "category": "tertiary",
+      "color_palette": {
+        "primary": ["#15803D", "#16A34A"],
+        "secondary": ["#22C55E", "#86EFAC"],
+        "accent": ["#DCFCE7", "#B91C1C", "#DC2626"]
+      },
+      "saturation_level": "medium-high",
+      "brightness_level": "medium",
+      "psychological_effect": "Envy, possessiveness, insecurity, resentment",
+      "cinematography_notes": "Sickly greens with red accents suggest possessive tension. Use split lighting or colored gels to create visual conflict."
+    },
+    {
+      "emotion": "Pride",
+      "category": "tertiary",
+      "color_palette": {
+        "primary": ["#7C3AED", "#6D28D9"],
+        "secondary": ["#A78BFA", "#C4B5FD"],
+        "accent": ["#F59E0B", "#FBBF24", "#FCD34D"]
+      },
+      "saturation_level": "high",
+      "brightness_level": "high",
+      "psychological_effect": "Confidence, achievement, dignity, arrogance",
+      "cinematography_notes": "Rich purples and golds convey royalty and accomplishment. Use heroic lighting (low angle, backlight) and symmetrical compositions."
+    },
+    {
+      "emotion": "Guilt",
+      "category": "tertiary",
+      "color_palette": {
+        "primary": ["#4B5563", "#374151"],
+        "secondary": ["#6B7280", "#9CA3AF"],
+        "accent": ["#D1D5DB", "#B91C1C", "#DC2626"]
+      },
+      "saturation_level": "very_low",
+      "brightness_level": "low",
+      "psychological_effect": "Remorse, regret, moral conflict, burden",
+      "cinematography_notes": "Ashen grays with blood red accents suggest moral staining. Use harsh overhead lighting creating deep shadows. Avoid warmth."
+    },
+    {
+      "emotion": "Despair",
+      "category": "tertiary",
+      "color_palette": {
+        "primary": ["#0C4A6E", "#075985"],
+        "secondary": ["#0369A1", "#0284C7"],
+        "accent": ["#BAE6FD", "#1F2937", "#111827"]
+      },
+      "saturation_level": "very_low",
+      "brightness_level": "very_low",
+      "psychological_effect": "Hopelessness, emptiness, desolation, defeat",
+      "cinematography_notes": "Deep desaturated blues approaching black convey emotional void. Extreme underexposure, vignetting, and fog/smoke amplify despair."
+    },
+    {
+      "emotion": "Hope",
+      "category": "tertiary",
+      "color_palette": {
+        "primary": ["#0EA5E9", "#0284C7"],
+        "secondary": ["#38BDF8", "#7DD3FC"],
+        "accent": ["#F0FDFA", "#FBBF24", "#FCD34D"]
+      },
+      "saturation_level": "medium-high",
+      "brightness_level": "high",
+      "psychological_effect": "Optimism, renewal, possibility, dawn",
+      "cinematography_notes": "Clear sky blues with golden accents suggest new beginnings. Dawn lighting, lens flares, and gradual brightening symbolize hope emerging."
+    },
+    {
+      "emotion": "Betrayal",
+      "category": "tertiary",
+      "color_palette": {
+        "primary": ["#65A30D", "#84CC16"],
+        "secondary": ["#991B1B", "#B91C1C"],
+        "accent": ["#6B21A8", "#7E22CE", "#A855F7"]
+      },
+      "saturation_level": "medium",
+      "brightness_level": "low-medium",
+      "psychological_effect": "Violation, shock, disillusionment, anger",
+      "cinematography_notes": "Poison greens, blood reds, and bruised purples create visual revulsion. Use split or harsh lighting, sudden color shifts to amplify shock."
+    },
+    {
+      "emotion": "Awe",
+      "category": "tertiary",
+      "color_palette": {
+        "primary": ["#3B82F6", "#2563EB"],
+        "secondary": ["#60A5FA", "#93C5FD"],
+        "accent": ["#DBEAFE", "#C026D3", "#A21CAF"]
+      },
+      "saturation_level": "high",
+      "brightness_level": "high",
+      "psychological_effect": "Wonder, grandeur, transcendence, vastness",
+      "cinematography_notes": "Vibrant blues and magentas suggest cosmic scale. Use wide shots, lens flares, and dramatic lighting ratios. God rays and silhouettes amplify grandeur."
+    },
+    {
+      "emotion": "Passion",
+      "category": "tertiary",
+      "color_palette": {
+        "primary": ["#DC2626", "#C026D3"],
+        "secondary": ["#BE185D", "#DB2777"],
+        "accent": ["#EA580C", "#FB923C", "#F97316"]
+      },
+      "saturation_level": "very_high",
+      "brightness_level": "high",
+      "psychological_effect": "Intensity, desire, fervor, obsession",
+      "cinematography_notes": "Intense reds, deep magentas, and fiery oranges convey raw emotion. Use dramatic lighting, high contrast, and bold color choices. Lens flares and bokeh enhance intensity."
+    }
+  ],
+  "metadata": {
+    "created_by": "MSI-VPE Project Team",
+    "last_updated": "2024-01-15",
+    "total_emotions": 20,
+    "sources": [
+      "Color Psychology and Cinema: The Emotional Language of Film",
+      "The Filmmaker's Guide to Color Grading and Color Theory",
+      "Go-Emotions Dataset (Google Research, 2020)",
+      "Plutchik's Wheel of Emotions (1980)",
+      "Pantone Color Psychology Research"
+    ],
+    "usage_notes": "All hex codes are sRGB. Brightness/saturation levels are relative guides. Always test colors in context of scene lighting and grading. Primary colors should dominate (60%), secondary (30%), accent (10%)."
+  }
+}
