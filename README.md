@@ -1,10 +1,15 @@
 # MSI-VPE: Multimodal Scene Intent & Visual Planning Engine
-## Screenplay Emotion-to-Visual Mapper
+## AI-Powered Screenplay-to-Cinematography Mapper
 
-**🎓 College Capstone Project**  
-**📅 Academic Year:** 2025-2026  
+**🏆 Hackathon Project**  
+**📅 January 2026**  
 **🔬 Research Domain:** AI/ML + Film Cinematography  
-**⚡ Status:** In Development
+**⚡ Status:** Fully Functional Demo
+
+[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.109-green.svg)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-18.2-61DAFB.svg)](https://reactjs.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
