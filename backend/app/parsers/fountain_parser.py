@@ -223,20 +223,21 @@ class FountainParser:
                 line_number=self.current_line
             )
         
-        # Character (must be all caps, but check next line for dialogue)
+        # Character (must be all caps, must check BEFORE parenthetical!)
+        # Character rule: All caps, next line is dialogue or parenthetical
         if re.match(self.CHARACTER_PATTERN, stripped):
-            # Look ahead to see if next line is dialogue
+            # Look ahead to see if next line is dialogue or parenthetical
             if self.current_line + 1 < len(self.lines):
                 next_line = self.lines[self.current_line + 1].strip()
-                # If next line exists and isn't another character, this is a character name
-                if next_line and not re.match(self.CHARACTER_PATTERN, next_line):
+                # If next line is parenthetical or non-character, this is a character name
+                if next_line and (next_line.startswith('(') or not re.match(self.CHARACTER_PATTERN, next_line)):
                     return SceneElement(
                         element_type=ElementType.CHARACTER,
                         content=stripped.rstrip('^').strip(),
                         line_number=self.current_line
                     )
         
-        # Parenthetical (dialogue direction)
+        # Parenthetical (dialogue direction) - AFTER character check
         if stripped.startswith('(') and stripped.endswith(')'):
             return SceneElement(
                 element_type=ElementType.PARENTHETICAL,
@@ -272,10 +273,13 @@ class FountainParser:
             )
         
         # Check if previous element was a character (dialogue)
-        # This is a heuristic - if previous non-empty line was CHARACTER, this is DIALOGUE
+        # This is a heuristic - if previous non-empty non-parenthetical line was CHARACTER, this is DIALOGUE
         for i in range(self.current_line - 1, -1, -1):
             prev_line = self.lines[i].strip()
             if not prev_line:
+                continue
+            # Skip parentheticals when looking back
+            if prev_line.startswith('(') and prev_line.endswith(')'):
                 continue
             if re.match(self.CHARACTER_PATTERN, prev_line):
                 return SceneElement(

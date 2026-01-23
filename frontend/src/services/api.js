@@ -15,11 +15,34 @@ class ApiService {
   /**
    * Analyze a screenplay script
    * @param {string} scriptText - The fountain format script text
+   * @param {string} title - The script title/filename
    * @returns {Promise} - Analysis results with job_id
    */
-  async analyzeScript(scriptText) {
+  async analyzeScript(scriptText, title = 'Screenplay') {
     const response = await this.client.post('/analyze', {
       script_text: scriptText,
+      title: title,
+    });
+    return response.data;
+  }
+
+  /**
+   * Upload a screenplay file (PDF, Fountain, or TXT)
+   * @param {File} file - The file object to upload
+   * @param {string} title - Optional title override
+   * @returns {Promise} - Analysis results with job_id
+   */
+  async uploadScriptFile(file, title = null) {
+    const formData = new FormData();
+    formData.append('file', file);
+    if (title) {
+      formData.append('title', title);
+    }
+    
+    const response = await this.client.post('/upload', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
     });
     return response.data;
   }

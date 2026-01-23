@@ -1,16 +1,12 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts';
 import { TrendingUp, Clock, Zap } from 'lucide-react';
+import LoadingSpinner from './LoadingSpinner';
 
 export default function EmotionTimeline({ analysisData, onBeatSelect, selectedBeat, loading }) {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-full">
-        <div className="text-center space-y-4">
-          <div className="animate-pulse-slow">
-            <TrendingUp className="w-16 h-16 mx-auto text-accent-blue" />
-          </div>
-          <p className="text-text-secondary">Building emotional timeline...</p>
-        </div>
+        <LoadingSpinner message="Building emotional timeline..." size="large" />
       </div>
     );
   }

@@ -56,5 +56,11 @@
     "capstone"
   ],
   "author": "Your Name <your.email@university.edu>",
-  "license": "MIT"
+  "license": "MIT",
+  "browserslist": [
+    "defaults",
+    "maintained node versions",
+    "not dead",
+    "not ie <= 11"
+  ]
 }

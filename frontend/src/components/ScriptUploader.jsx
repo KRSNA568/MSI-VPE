@@ -1,18 +1,28 @@
 import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { Upload, FileText, Loader2, Check } from 'lucide-react';
+import { Upload, FileText, Check } from 'lucide-react';
+import LoadingSpinner from './LoadingSpinner';
 
 export default function ScriptUploader({ onScriptUpload, scriptText, loading }) {
   const onDrop = useCallback(
     (acceptedFiles) => {
       const file = acceptedFiles[0];
       if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const text = e.target.result;
-          onScriptUpload(text);
-        };
-        reader.readAsText(file);
+        // For PDF files, we'll send the file directly to the server
+        // For text files, we'll read and send the text
+        if (file.name.toLowerCase().endsWith('.pdf')) {
+          // Send PDF file directly
+          onScriptUpload(file, file.name.replace(/\.pdf$/i, ''));
+        } else {
+          // Read text files
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const text = e.target.result;
+            const filename = file.name.replace(/\.(fountain|txt)$/i, '');
+            onScriptUpload(text, filename);
+          };
+          reader.readAsText(file);
+        }
       }
     },
     [onScriptUpload]
@@ -22,6 +32,7 @@ export default function ScriptUploader({ onScriptUpload, scriptText, loading }) 
     onDrop,
     accept: {
       'text/plain': ['.fountain', '.txt'],
+      'application/pdf': ['.pdf'],
     },
     multiple: false,
   });
@@ -90,13 +101,7 @@ export default function ScriptUploader({ onScriptUpload, scriptText, loading }) 
         <input {...getInputProps()} />
 
         {loading ? (
-          <div className="space-y-4">
-            <Loader2 className="w-12 h-12 mx-auto text-accent-blue animate-spin" />
-            <p className="text-text-primary font-medium">Analyzing screenplay...</p>
-            <p className="text-sm text-text-secondary">
-              Running emotion detection and visual mapping
-            </p>
-          </div>
+          <LoadingSpinner message="Analyzing screenplay..." size="large" />
         ) : (
           <div className="space-y-4">
             <Upload className="w-12 h-12 mx-auto text-text-secondary" />
@@ -110,7 +115,7 @@ export default function ScriptUploader({ onScriptUpload, scriptText, loading }) 
             </div>
             <div className="flex items-center justify-center gap-2 text-xs text-text-secondary">
               <FileText className="w-4 h-4" />
-              <span>Supports .fountain and .txt files</span>
+              <span>Supports .fountain, .txt, and .pdf files</span>
             </div>
           </div>
         )}

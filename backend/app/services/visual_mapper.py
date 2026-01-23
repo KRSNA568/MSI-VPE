@@ -24,6 +24,26 @@ class VisualMapper:
     """
     Expert system for mapping emotional data to visual cinematography parameters.
     """
+    
+    # Film reference database - famous examples of cinematography for emotions
+    FILM_REFERENCES = {
+        EmotionType.FEAR: ["The Shining (Kubrick)", "Alien (Scott)", "Prisoners (Villeneuve)"],
+        EmotionType.ANGER: ["Whiplash (Chazelle)", "Taxi Driver (Scorsese)", "Mad Max: Fury Road (Miller)"],
+        EmotionType.JOY: ["La La Land (Chazelle)", "Amélie (Jeunet)", "The Grand Budapest Hotel (Anderson)"],
+        EmotionType.SADNESS: ["Her (Jonze)", "Manchester by the Sea (Lonergan)", "Blue Valentine (Cianfrance)"],
+        EmotionType.DESPAIR: ["Requiem for a Dream (Aronofsky)", "The Pianist (Polanski)", "Schindler's List (Spielberg)"],
+        EmotionType.PASSION: ["Call Me By Your Name (Guadagnino)", "In the Mood for Love (Wong Kar-wai)", "Portrait of a Lady on Fire (Sciamma)"],
+        EmotionType.TRIUMPH: ["Rocky (Avildsen)", "The Shawshank Redemption (Darabont)", "Creed (Coogler)"],
+        EmotionType.TENSION: ["No Country for Old Men (Coens)", "Dunkirk (Nolan)", "Sicario (Villeneuve)"],
+        EmotionType.ANXIETY: ["Uncut Gems (Safdies)", "Mother! (Aronofsky)", "Black Swan (Aronofsky)"],
+        EmotionType.BETRAYAL: ["The Godfather Part II (Coppola)", "Chinatown (Polanski)", "Gone Girl (Fincher)"],
+        EmotionType.EUPHORIA: ["Enter the Void (Noé)", "Spring Breakers (Korine)", "Climax (Noé)"],
+        EmotionType.DREAD: ["The Lighthouse (Eggers)", "Hereditary (Aster)", "The VVitch (Eggers)"],
+        EmotionType.CONFUSION: ["Memento (Nolan)", "Mulholland Drive (Lynch)", "Inception (Nolan)"],
+        EmotionType.LONELINESS: ["Lost in Translation (Coppola)", "Drive (Refn)", "Blade Runner 2049 (Villeneuve)"],
+        EmotionType.SERENITY: ["Tree of Life (Malick)", "The Revenant (Iñárritu)", "Gravity (Cuarón)"],
+        EmotionType.HOPE: ["Life is Beautiful (Benigni)", "The Pursuit of Happyness (Muccino)", "Slumdog Millionaire (Boyle)"]
+    }
 
     def __init__(self):
         self.color_map: Dict[str, Any] = {}
@@ -74,14 +94,19 @@ class VisualMapper:
 
         # 4. Construct Reasoning
         reasoning = self._generate_reasoning(emotional_arc, colors, lighting, camera)
+        
+        # 5. Get film references
+        film_refs = self.FILM_REFERENCES.get(primary_emotion, [])
+        if film_refs and len(film_refs) > 2:
+            film_refs = film_refs[:2]  # Limit to 2 most relevant
 
         return VisualSignals(
             colors=colors,
             lighting=lighting,
             camera=camera,
             reasoning=reasoning,
-            confidence_score=emotional_arc.primary_emotion.confidence, # simplified
-            film_references=[], # Could populate from DB
+            confidence_score=emotional_arc.primary_emotion.confidence,
+            film_references=film_refs,
             alternative_options=None
         )
 
@@ -236,12 +261,61 @@ class VisualMapper:
 
         return CameraParameters(**params)
 
-    def _generate_reasoning(self, arc, colors, lighting, camera):
-        """Generate text explanation for choices"""
-        e_name = arc.primary_emotion.emotion.value
-        return (
-            f"Based on the primary emotion of {e_name} (intensity: {arc.primary_emotion.intensity}%), "
-            f"we recommend a {lighting.technique.value} lighting setup to enhance the mood. "
-            f"The color palette uses {colors.primary_colors[0]} to evoke the psychological state. "
-            f"Camera is positioned {camera.vertical_angle.value} to reflect character power dynamics."
-        )
+    def _generate_reasoning(self, arc, colors, lighting, camera) -> str:
+        """Generate detailed cinematographic reasoning with professional context"""
+        e_name = arc.primary_emotion.emotion.value.replace('_', ' ').title()
+        intensity = arc.primary_emotion.intensity
+        
+        # Build reasoning parts
+        parts = []
+        
+        # 1. Emotional context
+        if intensity > 70:
+            parts.append(f"The high-intensity {e_name} emotion (intensity: {intensity}%) requires bold visual choices.")
+        elif intensity > 40:
+            parts.append(f"The moderate {e_name} emotion (intensity: {intensity}%) calls for balanced cinematography.")
+        else:
+            parts.append(f"The subtle {e_name} emotion (intensity: {intensity}%) benefits from restrained visual treatment.")
+        
+        # 2. Lighting rationale
+        lighting_desc = lighting.technique.value.replace('_', ' ').title()
+        if lighting.technique.value in ['chiaroscuro', 'low_key']:
+            parts.append(f"{lighting_desc} lighting creates dramatic contrast and psychological depth.")
+        elif lighting.technique.value in ['high_key', 'butterfly']:
+            parts.append(f"{lighting_desc} lighting establishes an optimistic, open atmosphere.")
+        else:
+            parts.append(f"{lighting_desc} lighting with {lighting.contrast_ratio} contrast ratio supports the emotional tone.")
+        
+        # 3. Color psychology
+        primary_color = colors.primary_colors[0] if colors.primary_colors else '#808080'
+        color_meanings = {
+            '#000000': 'darkness and mystery',
+            '#FF0000': 'passion and danger',
+            '#0000FF': 'melancholy and isolation',
+            '#00FF00': 'unease and toxicity',
+            '#FFFF00': 'optimism and energy',
+            '#FFA500': 'warmth and excitement',
+            '#800080': 'royalty and ambiguity'
+        }
+        color_desc = color_meanings.get(primary_color, 'the psychological state')
+        parts.append(f"The {primary_color} palette evokes {color_desc}.")
+        
+        # 4. Camera positioning
+        angle_desc = camera.vertical_angle.value.replace('_', ' ')
+        if camera.vertical_angle.value in ['high', 'extreme_high']:
+            parts.append(f"The {angle_desc} camera angle positions the subject as vulnerable or powerless.")
+        elif camera.vertical_angle.value in ['low', 'extreme_low']:
+            parts.append(f"The {angle_desc} camera angle grants the subject dominance and authority.")
+        else:
+            parts.append(f"The {angle_desc} perspective maintains objective neutrality.")
+        
+        # 5. Shot composition
+        shot_desc = camera.shot_size.value.replace('_', ' ')
+        if 'close' in shot_desc:
+            parts.append(f"{shot_desc.title()} framing creates intimacy and emphasizes internal states.")
+        elif 'long' in shot_desc or 'wide' in shot_desc:
+            parts.append(f"{shot_desc.title()} establishes environment and isolation.")
+        else:
+            parts.append(f"{shot_desc.title()} balances character and context.")
+        
+        return " ".join(parts)

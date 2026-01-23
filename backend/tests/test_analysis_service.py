@@ -16,7 +16,7 @@ class TestAnalysisService(unittest.TestCase):
         self.service = AnalysisService()
         self.service.emotion_detector = MagicMock()
         
-        # Mock Response
+        # Mock Response - using analyze_text method (called by analysis_service)
         self.mock_arc = EmotionalArc(
             scene_id="1",
             segment_id="1-0",
@@ -29,7 +29,7 @@ class TestAnalysisService(unittest.TestCase):
             secondary_emotions=[],
             overall_intensity=80
         )
-        self.service.emotion_detector.analyze_segment.return_value = self.mock_arc
+        self.service.emotion_detector.analyze_text.return_value = self.mock_arc
 
     def tearDown(self):
         self.mock_emotion_patcher.stop()

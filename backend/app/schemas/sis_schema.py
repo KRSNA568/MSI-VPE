@@ -7,9 +7,19 @@ Date: January 23, 2026
 """
 
 from typing import List, Optional, Dict, Any, Literal
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, ConfigDict
 from datetime import datetime
 from enum import Enum
+
+
+class SISBaseModel(BaseModel):
+    model_config = ConfigDict(
+        extra="forbid",
+        validate_assignment=True,
+        str_strip_whitespace=True,
+        populate_by_name=True,
+        protected_namespaces=()
+    )
 
 
 # ============================================================================
@@ -135,7 +145,7 @@ class LightingTechnique(str, Enum):
 # NESTED MODELS - Emotional Analysis
 # ============================================================================
 
-class EmotionDetection(BaseModel):
+class EmotionDetection(SISBaseModel):
     """Individual emotion detection result"""
     emotion: EmotionType = Field(..., description="Detected emotion type")
     category: EmotionCategory = Field(..., description="Emotion category")
@@ -149,8 +159,10 @@ class EmotionDetection(BaseModel):
         return round(v, 2)
 
 
-class EmotionalArc(BaseModel):
+class EmotionalArc(SISBaseModel):
     """Complete emotional profile for a beat/scene"""
+    scene_id: Optional[str] = Field(None, description="Scene identifier")
+    segment_id: Optional[str] = Field(None, description="Segment identifier")
     primary_emotion: EmotionDetection = Field(..., description="Dominant emotion")
     secondary_emotions: List[EmotionDetection] = Field(
         default_factory=list, 
@@ -167,7 +179,7 @@ class EmotionalArc(BaseModel):
     overall_intensity: int = Field(..., ge=0, le=100, description="Overall emotional intensity")
 
 
-class PowerDynamics(BaseModel):
+class PowerDynamics(SISBaseModel):
     """Character power relationships"""
     dominant_character: Optional[str] = Field(None, description="Character with power in scene")
     power_balance: Literal["dominant", "submissive", "equal", "shifting"] = Field(
@@ -177,7 +189,7 @@ class PowerDynamics(BaseModel):
     power_score: int = Field(..., ge=0, le=100, description="Power intensity (0=weak, 100=strong)")
 
 
-class PacingMetadata(BaseModel):
+class PacingMetadata(SISBaseModel):
     """Scene pacing information"""
     bpm: int = Field(..., ge=20, le=180, description="Suggested editing BPM")
     rhythm: Literal["very_slow", "slow", "medium", "fast", "very_fast"] = Field(
@@ -192,7 +204,7 @@ class PacingMetadata(BaseModel):
 # NESTED MODELS - Visual Recommendations
 # ============================================================================
 
-class ColorPalette(BaseModel):
+class ColorPalette(SISBaseModel):
     """Color scheme recommendations"""
     primary_colors: List[str] = Field(
         ..., 
@@ -227,7 +239,7 @@ class ColorPalette(BaseModel):
         return v
 
 
-class LightingParameters(BaseModel):
+class LightingParameters(SISBaseModel):
     """Comprehensive lighting setup"""
     quality: int = Field(..., ge=0, le=100, description="Hardness (0=soft, 100=hard)")
     temperature_kelvin: int = Field(
@@ -266,7 +278,7 @@ class LightingParameters(BaseModel):
         return round(v, -2)
 
 
-class CameraParameters(BaseModel):
+class CameraParameters(SISBaseModel):
     """Complete camera setup"""
     vertical_angle: CameraAngleVertical = Field(..., description="Vertical angle")
     horizontal_angle: CameraAngleHorizontal = Field(..., description="Horizontal angle")
@@ -298,7 +310,7 @@ class CameraParameters(BaseModel):
     )
 
 
-class VisualSignals(BaseModel):
+class VisualSignals(SISBaseModel):
     """Complete visual recommendation package"""
     colors: ColorPalette = Field(..., description="Color palette")
     lighting: LightingParameters = Field(..., description="Lighting setup")
@@ -324,7 +336,7 @@ class VisualSignals(BaseModel):
 # BEAT & SCENE MODELS
 # ============================================================================
 
-class Beat(BaseModel):
+class Beat(SISBaseModel):
     """Individual beat within a scene (sub-scene unit)"""
     beat_id: str = Field(..., description="Unique beat identifier")
     beat_number: int = Field(..., ge=1, description="Sequential beat number in scene")
@@ -357,7 +369,7 @@ class Beat(BaseModel):
         return v
 
 
-class ScriptMetadata(BaseModel):
+class ScriptMetadata(SISBaseModel):
     """Screenplay metadata"""
     title: Optional[str] = Field(None, description="Script title")
     scene_number: str = Field(..., description="Scene number/ID")
@@ -378,7 +390,7 @@ class ScriptMetadata(BaseModel):
 # TOP-LEVEL SCENE INTENT SCHEMA
 # ============================================================================
 
-class SceneIntentSchema(BaseModel):
+class SceneIntentSchema(SISBaseModel):
     """
     Complete Scene Intent Schema (SIS) - Top-level output
     
@@ -440,9 +452,8 @@ class SceneIntentSchema(BaseModel):
         description="Analysis warnings or caveats"
     )
     
-    class Config:
-        """Pydantic configuration"""
-        json_schema_extra = {
+    model_config = ConfigDict(
+        json_schema_extra={
             "example": {
                 "schema_version": "1.0",
                 "analysis_id": "scene_001_20260123",
@@ -499,13 +510,14 @@ class SceneIntentSchema(BaseModel):
                 ]
             }
         }
+    )
 
 
 # ============================================================================
 # INPUT/OUTPUT MODELS
 # ============================================================================
 
-class ScriptInput(BaseModel):
+class ScriptInput(SISBaseModel):
     """Input model for script upload"""
     script_text: str = Field(..., min_length=10, description="Fountain format screenplay text")
     title: Optional[str] = Field(None, description="Script title")
@@ -519,7 +531,7 @@ class ScriptInput(BaseModel):
     )
 
 
-class AnalysisRequest(BaseModel):
+class AnalysisRequest(SISBaseModel):
     """Request for scene analysis"""
     job_id: str = Field(..., description="Unique job identifier")
     script_text: str = Field(..., description="Scene text to analyze")
@@ -529,7 +541,7 @@ class AnalysisRequest(BaseModel):
     )
 
 
-class AnalysisResponse(BaseModel):
+class AnalysisResponse(SISBaseModel):
     """Response from analysis endpoint"""
     job_id: str = Field(..., description="Job identifier")
     status: Literal["pending", "processing", "completed", "failed"] = Field(
@@ -541,7 +553,7 @@ class AnalysisResponse(BaseModel):
     progress: Optional[int] = Field(None, ge=0, le=100, description="Progress percentage")
 
 
-class HealthCheck(BaseModel):
+class HealthCheck(SISBaseModel):
     """API health check response"""
     status: Literal["healthy", "unhealthy"] = "healthy"
     version: str = "1.0.0"
@@ -561,7 +573,7 @@ class ExportFormat(str, Enum):
     USD = "usd"  # Future: Universal Scene Description
 
 
-class ExportRequest(BaseModel):
+class ExportRequest(SISBaseModel):
     """Request for exporting analysis"""
     job_id: str = Field(..., description="Job to export")
     format: ExportFormat = Field(default=ExportFormat.JSON, description="Export format")

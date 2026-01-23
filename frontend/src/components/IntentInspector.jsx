@@ -1,6 +1,50 @@
-import { Camera, Lightbulb, Palette, Film, Download } from 'lucide-react';
+import { Camera, Lightbulb, Palette, Film, Download, FileText } from 'lucide-react';
+import ColorSwatch from './ColorSwatch';
 
-export default function IntentInspector({ selectedBeat, analysisData }) {
+const handleExport = (beat, fullAnalysis) => {
+  const exportData = {
+    beat_id: beat?.beat_id,
+    timestamp: new Date().toISOString(),
+    emotional_arc: beat?.emotional_arc,
+    visual_signals: beat?.visual_signals,
+    pacing: beat?.pacing_metadata,
+    full_scene_context: fullAnalysis?.scenes?.[0]
+  };
+
+  const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `msi-vpe-analysis-${beat?.beat_id || 'export'}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+};
+
+const handlePDFExport = async (jobId, scriptTitle) => {
+  try {
+    const response = await fetch(`http://localhost:8000/api/v1/export/${jobId}/pdf`);
+    if (!response.ok) {
+      throw new Error('PDF export failed');
+    }
+    
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${scriptTitle || 'screenplay'}_analysis.pdf`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  } catch (error) {
+    console.error('PDF export error:', error);
+    alert('Failed to export PDF. Please try again.');
+  }
+};
+
+export default function IntentInspector({ selectedBeat, analysisData, jobId, scriptTitle }) {
   if (!analysisData) {
     return (
       <div className="p-4">
@@ -21,6 +65,20 @@ export default function IntentInspector({ selectedBeat, analysisData }) {
     return (
       <div className="p-4">
         <div className="panel">
+          {/* Export PDF Button - Always visible when data exists */}
+          <div className="panel-content border-b border-panel-border p-4">
+            <button
+              onClick={() => handlePDFExport(jobId, scriptTitle)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-accent-blue hover:bg-accent-blue/90 text-white rounded-md transition-colors font-medium"
+            >
+              <FileText className="w-5 h-5" />
+              Export Full Report (PDF)
+            </button>
+            <p className="text-xs text-text-secondary mt-2 text-center">
+              Professional format with all scenes & recommendations
+            </p>
+          </div>
+          
           <div className="panel-content text-center py-12">
             <Camera className="w-12 h-12 mx-auto text-text-secondary mb-4" />
             <h3 className="text-lg font-medium mb-2">Select a Beat</h3>
@@ -39,6 +97,26 @@ export default function IntentInspector({ selectedBeat, analysisData }) {
 
   return (
     <div className="p-4 space-y-4">
+      {/* Export Buttons */}
+      <div className="panel">
+        <div className="panel-content space-y-2">
+          <button
+            onClick={() => handlePDFExport(jobId, scriptTitle)}
+            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-accent-blue hover:bg-accent-blue/90 text-white rounded-md transition-colors font-medium"
+          >
+            <FileText className="w-4 h-4" />
+            Export Full Report (PDF)
+          </button>
+          <button
+            onClick={() => handleExport(selectedBeat, analysisData)}
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 bg-panel-bg hover:bg-panel-border text-text-primary rounded-md transition-colors border border-panel-border"
+          >
+            <Download className="w-4 h-4" />
+            Export This Beat (JSON)
+          </button>
+        </div>
+      </div>
+
       {/* Primary Intent Tags */}
       <div className="panel">
         <div className="panel-header">Primary Emotion</div>
@@ -215,13 +293,7 @@ export default function IntentInspector({ selectedBeat, analysisData }) {
                 <div className="text-xs font-semibold text-text-secondary mb-2">PRIMARY</div>
                 <div className="flex gap-2">
                   {visual_signals.color_palette.primary_colors.map((color, idx) => (
-                    <div key={idx} className="flex-1">
-                      <div
-                        className="h-12 rounded border border-panel-border"
-                        style={{ backgroundColor: color }}
-                      />
-                      <div className="text-xs text-center mt-1 font-mono">{color}</div>
-                    </div>
+                    <ColorSwatch key={idx} color={color} size="large" />
                   ))}
                 </div>
               </div>
@@ -233,13 +305,7 @@ export default function IntentInspector({ selectedBeat, analysisData }) {
                 <div className="text-xs font-semibold text-text-secondary mb-2">SECONDARY</div>
                 <div className="flex gap-2">
                   {visual_signals.color_palette.secondary_colors.map((color, idx) => (
-                    <div key={idx} className="flex-1">
-                      <div
-                        className="h-8 rounded border border-panel-border"
-                        style={{ backgroundColor: color }}
-                      />
-                      <div className="text-xs text-center mt-1 font-mono">{color}</div>
-                    </div>
+                    <ColorSwatch key={idx} color={color} size="default" />
                   ))}
                 </div>
               </div>
@@ -265,7 +331,10 @@ export default function IntentInspector({ selectedBeat, analysisData }) {
       )}
 
       {/* Export Button */}
-      <button className="btn-primary w-full flex items-center justify-center gap-2">
+      <button 
+        onClick={() => handleExport(selectedBeat, analysisData)}
+        className="btn-primary w-full flex items-center justify-center gap-2"
+      >
         <Download className="w-4 h-4" />
         <span>Export Beat Analysis</span>
       </button>

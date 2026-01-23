@@ -11,15 +11,59 @@ function App() {
   const [selectedBeat, setSelectedBeat] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [jobId, setJobId] = useState(null);
+  const [scriptTitle, setScriptTitle] = useState('Screenplay');
 
-  const handleScriptUpload = async (text) => {
-    setScriptText(text);
+  const handleExportAll = () => {
+    if (!analysisData) return;
+
+    const exportData = {
+      timestamp: new Date().toISOString(),
+      script_length: scriptText.length,
+      analysis: analysisData,
+      metadata: {
+        app_version: '1.0.0',
+        export_format: 'MSI-VPE JSON v1'
+      }
+    };
+
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `msi-vpe-full-analysis-${Date.now()}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  const handleScriptUpload = async (textOrFile, filename = 'Screenplay') => {
+    setScriptTitle(filename);
     setLoading(true);
     setError(null);
 
     try {
-      const result = await apiService.analyzeScript(text);
+      let result;
+      
+      // Check if it's a File object (PDF) or text string
+      if (textOrFile instanceof File) {
+        // PDF file - send via FormData to upload endpoint
+        result = await apiService.uploadScriptFile(textOrFile, filename);
+        // For display purposes, show a placeholder since we can't display PDF content easily
+        setScriptText(`[PDF File: ${textOrFile.name}]\\n\\nPDF content extracted and analyzed.`);
+      } else {
+        // Text content - send to analyze endpoint
+        setScriptText(textOrFile);
+        result = await apiService.analyzeScript(textOrFile, filename);
+      }
+      
       console.log('Analysis result:', result);
+      
+      // Store job ID for PDF export
+      if (result.job_id) {
+        setJobId(result.job_id);
+      }
       
       // The API returns the result directly in the response
       if (result.result) {
@@ -90,6 +134,14 @@ function App() {
               <option disabled>Noir (Coming Soon)</option>
               <option disabled>High Saturation (Coming Soon)</option>
             </select>
+            <button
+              onClick={handleExportAll}
+              className="btn-secondary text-sm flex items-center gap-2"
+              disabled={!analysisData}
+            >
+              <Film className="w-4 h-4" />
+              Export All
+            </button>
           </div>
         </div>
       </header>
@@ -142,6 +194,8 @@ function App() {
             <IntentInspector
               selectedBeat={selectedBeat}
               analysisData={analysisData}
+              jobId={jobId}
+              scriptTitle={scriptTitle}
             />
           </div>
         </div>

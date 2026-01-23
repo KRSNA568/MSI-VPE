@@ -2,13 +2,18 @@
 Configuration settings for MSI-VPE Backend
 """
 
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import Optional
 import os
 
 
 class Settings(BaseSettings):
     """Application settings with environment variable support"""
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=True
+    )
     
     # Application Info
     APP_NAME: str = "MSI-VPE Backend"
@@ -61,16 +66,23 @@ class Settings(BaseSettings):
     # Performance
     ENABLE_CACHING: bool = True
     CACHE_TTL: int = 3600
+
+    # Security / Auth
+    API_KEY: Optional[str] = None
+    RATE_LIMIT_PER_MINUTE: int = 120
+    RATE_LIMIT_BURST: int = 60
+
+    # Startup behavior
+    WARM_MODELS_ON_STARTUP: bool = False
+
+    # AI Text Generation tuning
+    AI_TEXT_MAX_SUMMARY_LEN: int = 120
+    AI_TEXT_MIN_SUMMARY_LEN: int = 40
+    AI_TEXT_MAX_BULLET_LEN: int = 180
     
     # Feature Flags
     ENABLE_ENSEMBLE_MODELS: bool = True
     ENABLE_ADVANCED_VISUAL_MAPPING: bool = True
     ENABLE_SCENE_BEAT_DETECTION: bool = True
     
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        case_sensitive = True
-
-
 settings = Settings()
