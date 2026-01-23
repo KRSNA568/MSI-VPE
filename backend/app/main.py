@@ -8,6 +8,8 @@ from fastapi.responses import JSONResponse
 import logging
 
 from app.core.config import settings
+from app.core.database import engine, Base
+from app.models.job import AnalysisJob # Import models to register them
 
 # Configure logging
 logging.basicConfig(
@@ -43,8 +45,11 @@ async def startup_event():
     
     # TODO: Initialize AI models here
     # TODO: Load knowledge base files
-    # TODO: Setup database connection
-
+    
+    # Initialize Database
+    logger.info("Initializing database...")
+    Base.metadata.create_all(bind=engine)
+    logger.info("Database initialized.")
 
 @app.on_event("shutdown")
 async def shutdown_event():
@@ -76,8 +81,8 @@ async def health_check():
 
 
 # API v1 routes will be registered here
-# TODO: Include API routers
-# app.include_router(analysis_router, prefix=settings.API_V1_PREFIX)
+from app.api.endpoints import analysis
+app.include_router(analysis.router, prefix=settings.API_V1_PREFIX, tags=["analysis"])
 
 
 if __name__ == "__main__":

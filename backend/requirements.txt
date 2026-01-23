@@ -68,8 +68,8 @@ mypy==1.8.0  # Type checking
 # ============================================================================
 # Development
 # ============================================================================
-ipython==8.20.0  # Better REPL
-jupyter==1.0.0  # Notebooks for experimentation
+# ipython==8.20.0  # Better REPL
+# jupyter==1.0.0  # Notebooks for experimentation
 
 # ============================================================================
 # Performance & Monitoring

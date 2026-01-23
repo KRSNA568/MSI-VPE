@@ -1,0 +1,96 @@
+{
+    "version": "1.0",
+    "description": "Mapping of emotional states to color theory and lighting parameters",
+    "emotions": [
+        {
+            "emotion": "Joy",
+            "palette": ["#FFD700", "#FFA500", "#FFFFFF"],
+            "dominant_hue": "Yellow",
+            "saturation": "High",
+            "brightness": "High",
+            "contrast": "Medium",
+            "meaning": "Warmth, energy, happiness",
+            "ref_colors": ["Amber", "Gold", "Warm White"]
+        },
+        {
+            "emotion": "Sadness",
+            "palette": ["#0000FF", "#4682B4", "#708090"],
+            "dominant_hue": "Blue",
+            "saturation": "Low",
+            "brightness": "Low",
+            "contrast": "Low",
+            "meaning": "Isolation, melancholy, coldness",
+            "ref_colors": ["Steel Blue", "Grey", "Cool White"]
+        },
+        {
+            "emotion": "Fear",
+            "palette": ["#000000", "#2F4F4F", "#008080"],
+            "dominant_hue": "Green/Blue",
+            "saturation": "Low",
+            "brightness": "Very Low",
+            "contrast": "High",
+            "meaning": "Danger, sickness, unnatural",
+            "ref_colors": ["Dark Slate", "Sickly Green", "Deep Shadows"]
+        },
+        {
+            "emotion": "Anger",
+            "palette": ["#FF0000", "#8B0000", "#FF4500"],
+            "dominant_hue": "Red",
+            "saturation": "High",
+            "brightness": "Medium",
+            "contrast": "High",
+            "meaning": "Violence, passion, heat",
+            "ref_colors": ["Crimson", "Blood Red", "Burnt Orange"]
+        },
+        {
+            "emotion": "Love",
+            "palette": ["#FFC0CB", "#FF69B4", "#FF1493"],
+            "dominant_hue": "Pink/Red",
+            "saturation": "Medium",
+            "brightness": "Soft",
+            "contrast": "Low",
+            "meaning": "Romance, tenderness, softness",
+            "ref_colors": ["Rose", "Soft Pink", "Warm Glow"]
+        },
+        {
+            "emotion": "Nostalgia",
+            "palette": ["#F4A460", "#DAA520", "#CD853F"],
+            "dominant_hue": "Sepia",
+            "saturation": "Medium",
+            "brightness": "Soft",
+            "contrast": "Low",
+            "meaning": "Memory, warmth, fading",
+            "ref_colors": ["Sepia", "Golden Hour", "Dusty Gold"]
+        },
+        {
+            "emotion": "Hope",
+            "palette": ["#F0F8FF", "#87CEFA", "#E0FFFF"],
+            "dominant_hue": "Light Blue/White",
+            "saturation": "Medium",
+            "brightness": "Very High",
+            "contrast": "Medium",
+            "meaning": "Optimism, clarity, divinity",
+            "ref_colors": ["Sky Blue", "Pure White", "Cyan"]
+        },
+         {
+            "emotion": "Neutral",
+            "palette": ["#808080", "#A9A9A9", "#D3D3D3"],
+            "dominant_hue": "Grey",
+            "saturation": "None",
+            "brightness": "Medium",
+            "contrast": "Medium",
+            "meaning": "Balance, status quo",
+            "ref_colors": ["Neutral Grey", "White Balance"]
+        },
+        {
+            "emotion": "Surprise",
+            "palette": ["#FFA500", "#FFFF00", "#00FFFF"],
+            "dominant_hue": "Diverse",
+            "saturation": "High",
+            "brightness": "High",
+            "contrast": "High",
+            "meaning": "Shock, suddenness",
+            "ref_colors": ["Vibrant Orange", "Electric Blue"]
+        }
+    ]
+}
