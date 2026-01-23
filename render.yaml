@@ -16,9 +16,8 @@ services:
         value: INFO
     
   # Frontend Static Site
-  - type: web
+  - type: static
     name: msi-vpe-frontend
-    runtime: node
     buildCommand: "cd frontend && npm install && npm run build"
     staticPublishPath: frontend/dist
     envVars:
